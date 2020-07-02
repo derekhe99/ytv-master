@@ -133,6 +133,6 @@
     <orderEntry type="library" name="Gradle: com.android.support:support-vector-drawable:26.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-compat:26.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:runtime:1.0.0@aar" level="project" />
-    <orderEntry type="module" module-name="library" />
+    <orderEntry type="module" module-name="ytv-master-library" />
   </component>
 </module>

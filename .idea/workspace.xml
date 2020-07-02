@@ -9,7 +9,462 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="514e1c23-879b-4d90-bc1c-0f701f943763" name="Default Changelist" comment="" />
+    <list default="true" id="514e1c23-879b-4d90-bc1c-0f701f943763" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeLibDexDebug/classes_0.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeLibDexDebug/classes_0.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/merge-state" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/google/android/apps/watchme/YouTubeStreamActivity$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/google/android/apps/watchme/YouTubeStreamActivity$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_native_libs/debug/out/lib/armeabi-v7a/libenc.so" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_native_libs/debug/out/lib/armeabi-v7a/libenc.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_native_libs/debug/out/lib/armeabi-v7a/libyuv.so" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_native_libs/debug/out/lib/armeabi-v7a/libyuv.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_native_libs/debug/out/lib/x86/libenc.so" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_native_libs/debug/out/lib/x86/libenc.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_native_libs/debug/out/lib/x86/libyuv.so" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_native_libs/debug/out/lib/x86/libyuv.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/google/android/apps/watchme/YouTubeStreamActivity$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/google/android/apps/watchme/YouTubeStreamActivity$2.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/stripped_native_libs/debug/out/lib/armeabi-v7a/libenc.so" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/stripped_native_libs/debug/out/lib/armeabi-v7a/libenc.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/stripped_native_libs/debug/out/lib/armeabi-v7a/libyuv.so" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/stripped_native_libs/debug/out/lib/armeabi-v7a/libyuv.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/stripped_native_libs/debug/out/lib/x86/libenc.so" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/stripped_native_libs/debug/out/lib/x86/libenc.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/stripped_native_libs/debug/out/lib/x86/libyuv.so" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/stripped_native_libs/debug/out/lib/x86/libyuv.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/google/android/apps/watchme/YouTubeStreamActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/google/android/apps/watchme/YouTubeStreamActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/library/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/copyright/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/animated_vector_drawable_25_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/animated_vector_drawable_25_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/appcompat_v7_25_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/appcompat_v7_25_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/espresso_core_2_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/espresso_idling_resource_2_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/hamcrest_integration_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/hamcrest_library_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/javawriter_2_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/javax_annotation_api_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/javax_inject_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/jsr305_2_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/rules_0_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/runner_0_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/support_annotations_25_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/support_annotations_25_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/support_compat_25_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/support_compat_25_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/support_core_ui_25_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/support_core_ui_25_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/support_core_utils_25_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/support_core_utils_25_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/support_fragment_25_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/support_fragment_25_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/support_media_compat_25_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/support_media_compat_25_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/support_v4_25_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/support_v4_25_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/support_vector_drawable_25_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/libraries/support_vector_drawable_25_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/library/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/library.iml" beforeDir="false" afterPath="$PROJECT_DIR$/library/library.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/local.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/github/faucamp/simplertmp/RtmpHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/github/faucamp/simplertmp/RtmpHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/github/faucamp/simplertmp/io/RtmpConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/github/faucamp/simplertmp/io/RtmpConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/github/faucamp/simplertmp/packets/Handshake.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/github/faucamp/simplertmp/packets/Handshake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/github/faucamp/simplertmp/packets/RtmpHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/github/faucamp/simplertmp/packets/RtmpHeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/AudioSpecificConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/AudioSpecificConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/BaseDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/BaseDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderConfigDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderSpecificInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/DecoderSpecificInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/Descriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/Descriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/ESDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/ESDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/ExtensionDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/ExtensionDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/ExtensionProfileLevelDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/ExtensionProfileLevelDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/InitialObjectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/InitialObjectDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/ObjectDescriptorBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/ObjectDescriptorBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/ObjectDescriptorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/ObjectDescriptorFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/ProfileLevelIndicationDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/ProfileLevelIndicationDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/SLConfigDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/SLConfigDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/UnknownDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/googlecode/mp4parser/boxes/mp4/objectdescriptors/UnknownDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicAmaroFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicAmaroFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicBrannanFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicBrannanFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicBrooklynFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicBrooklynFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicCalmFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicCalmFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicEarlyBirdFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicEarlyBirdFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicFreudFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicFreudFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicHealthyFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicHealthyFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicHefeFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicHefeFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicHudsonFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicHudsonFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicInkwellFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicInkwellFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicKevinFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicKevinFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicLomoFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicLomoFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicN1977Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicN1977Filter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicNashvilleFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicNashvilleFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicPixarFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicPixarFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicRiseFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicRiseFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicSierraFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicSierraFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicSunriseFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicSunriseFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicSunsetFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicSunsetFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicSutroFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicSutroFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicSweetsFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicSweetsFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicTenderFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicTenderFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicToasterFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicToasterFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicValenciaFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicValenciaFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicWaldenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicWaldenFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicWarmFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicWarmFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicXproIIFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/advanced/MagicXproIIFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/base/gpuimage/GPUImageFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/base/gpuimage/GPUImageFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/utils/MagicFilterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/utils/MagicFilterFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/utils/Rotation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/seu/magicfilter/utils/TextureRotationUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/net/ossrs/yasea/SrsAllocator.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/net/ossrs/yasea/SrsAllocator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/net/ossrs/yasea/SrsCameraView.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/net/ossrs/yasea/SrsCameraView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/net/ossrs/yasea/SrsEncodeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/net/ossrs/yasea/SrsEncodeHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/net/ossrs/yasea/SrsEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/net/ossrs/yasea/SrsEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/net/ossrs/yasea/SrsFlvMuxer.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/net/ossrs/yasea/SrsFlvMuxer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/net/ossrs/yasea/SrsMp4Muxer.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/net/ossrs/yasea/SrsMp4Muxer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/net/ossrs/yasea/SrsPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/net/ossrs/yasea/SrsPublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/java/net/ossrs/yasea/SrsRecordHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/net/ossrs/yasea/SrsRecordHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/jniLibs/armeabi-v7a/libenc.so" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/jniLibs/armeabi-v7a/libenc.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/jniLibs/armeabi-v7a/libyuv.so" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/jniLibs/armeabi-v7a/libyuv.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/jniLibs/x86/libenc.so" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/jniLibs/x86/libenc.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/jniLibs/x86/libyuv.so" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/jniLibs/x86/libyuv.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/Android.mk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/Application.mk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libenc.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libs/armeabi-v7a/libx264.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libs/armeabi-v7a/libyuv.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libs/x86/libx264.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libs/x86/libyuv.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/AUTHORS" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/COPYING" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/android_build_armeabi_v7a.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/android_build_x86.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/aarch64/asm-offsets.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/aarch64/asm-offsets.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/aarch64/asm.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/aarch64/bitstream-a.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/aarch64/cabac-a.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/aarch64/dct-a.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/aarch64/dct.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/aarch64/deblock-a.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/aarch64/mc-a.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/aarch64/mc-c.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/aarch64/mc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/aarch64/pixel-a.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/aarch64/pixel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/aarch64/predict-a.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/aarch64/predict-c.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/aarch64/predict.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/aarch64/quant-a.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/aarch64/quant.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/arm/asm.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/arm/bitstream-a.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/arm/cpu-a.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/arm/dct-a.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/arm/dct.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/arm/deblock-a.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/arm/mc-a.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/arm/mc-c.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/arm/mc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/arm/pixel-a.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/arm/pixel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/arm/predict-a.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/arm/predict-c.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/arm/predict.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/arm/quant-a.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/arm/quant.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/bitstream.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/bitstream.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/cabac.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/cabac.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/common.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/common.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/cpu.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/cpu.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/dct.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/dct.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/deblock.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/frame.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/frame.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/macroblock.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/macroblock.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/mc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/mc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/mips/dct-c.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/mips/dct.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/mips/deblock-c.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/mips/macros.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/mips/mc-c.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/mips/mc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/mips/pixel-c.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/mips/pixel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/mips/predict-c.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/mips/predict.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/mips/quant-c.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/mips/quant.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/mvpred.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/opencl.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/opencl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/opencl/bidir.cl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/opencl/downscale.cl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/opencl/intra.cl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/opencl/motionsearch.cl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/opencl/subpel.cl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/opencl/weightp.cl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/opencl/x264-cl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/osdep.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/osdep.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/pixel.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/pixel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/ppc/dct.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/ppc/dct.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/ppc/deblock.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/ppc/mc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/ppc/mc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/ppc/pixel.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/ppc/pixel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/ppc/ppccommon.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/ppc/predict.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/ppc/predict.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/ppc/quant.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/ppc/quant.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/predict.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/predict.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/quant.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/quant.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/rectangle.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/rectangle.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/set.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/set.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/threadpool.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/threadpool.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/vlc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/win32thread.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/win32thread.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/bitstream-a.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/cabac-a.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/const-a.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/cpu-a.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/dct-32.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/dct-64.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/dct-a.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/dct.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/deblock-a.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/mc-a.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/mc-a2.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/mc-c.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/mc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/pixel-32.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/pixel-a.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/pixel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/predict-a.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/predict-c.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/predict.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/quant-a.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/quant.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/sad-a.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/sad16-a.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/trellis-64.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/util.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/x86inc.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/common/x86/x86util.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/config.guess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/config.sub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/configure" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/doc/ratecontrol.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/doc/regression_test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/doc/standards.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/doc/threads.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/doc/vui.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/encoder/analyse.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/encoder/analyse.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/encoder/cabac.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/encoder/cavlc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/encoder/encoder.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/encoder/lookahead.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/encoder/macroblock.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/encoder/macroblock.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/encoder/me.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/encoder/me.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/encoder/ratecontrol.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/encoder/ratecontrol.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/encoder/rdo.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/encoder/set.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/encoder/set.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/encoder/slicetype-cl.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/encoder/slicetype.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/example.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/extras/avisynth_c.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/extras/avxsynth_c.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/extras/cl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/extras/cl_platform.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/extras/getopt.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/extras/getopt.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/extras/intel_dispatcher.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/extras/inttypes.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/extras/stdint.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/filters/filters.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/filters/filters.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/filters/video/cache.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/filters/video/crop.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/filters/video/depth.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/filters/video/fix_vfr_pts.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/filters/video/internal.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/filters/video/internal.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/filters/video/resize.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/filters/video/select_every.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/filters/video/source.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/filters/video/video.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/filters/video/video.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/input/avs.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/input/ffms.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/input/input.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/input/input.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/input/lavf.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/input/raw.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/input/thread.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/input/timecode.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/input/y4m.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/output/flv.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/output/flv_bytestream.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/output/flv_bytestream.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/output/matroska.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/output/matroska_ebml.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/output/matroska_ebml.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/output/mp4.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/output/mp4_lsmash.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/output/output.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/output/raw.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/tools/checkasm-a.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/tools/checkasm-aarch64.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/tools/checkasm-arm.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/tools/checkasm.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/tools/cltostr.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/tools/countquant_x264.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/tools/digress/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/tools/digress/cli.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/tools/digress/comparers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/tools/digress/constants.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/tools/digress/errors.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/tools/digress/scm/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/tools/digress/scm/dummy.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/tools/digress/scm/git.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/tools/digress/testing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/tools/gas-preprocessor.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/tools/msvsdepend.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/tools/q_matrix_jvt.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/tools/test_x264.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/version.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/x264.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/x264.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/x264cli.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/x264dll.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libx264/x264res.rc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/Android.mk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/Application.mk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/include/libyuv.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/include/libyuv/basic_types.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/include/libyuv/compare.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/include/libyuv/compare_row.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/include/libyuv/convert.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/include/libyuv/convert_argb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/include/libyuv/convert_from.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/include/libyuv/convert_from_argb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/include/libyuv/cpu_id.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/include/libyuv/mjpeg_decoder.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/include/libyuv/planar_functions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/include/libyuv/rotate.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/include/libyuv/rotate_argb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/include/libyuv/rotate_row.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/include/libyuv/row.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/include/libyuv/scale.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/include/libyuv/scale_argb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/include/libyuv/scale_row.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/include/libyuv/version.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/include/libyuv/video_common.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/compare.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/compare_common.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/compare_gcc.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/compare_neon.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/compare_neon64.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/compare_win.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/convert.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/convert_argb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/convert_from.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/convert_from_argb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/convert_jpeg.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/convert_to_argb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/convert_to_i420.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/cpu_id.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/mjpeg_decoder.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/mjpeg_validate.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/planar_functions.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/rotate.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/rotate_any.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/rotate_argb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/rotate_common.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/rotate_gcc.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/rotate_mips.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/rotate_neon.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/rotate_neon64.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/rotate_win.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/row_any.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/row_common.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/row_gcc.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/row_mips.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/row_neon.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/row_neon64.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/row_win.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/scale.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/scale_any.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/scale_argb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/scale_common.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/scale_gcc.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/scale_mips.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/scale_neon.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/scale_neon64.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/scale_win.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/libenc/jni/libyuv/jni/source/video_common.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/res/raw/brightness.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/res/raw/brightness.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/res/raw/constrast.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/res/raw/constrast.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/res/raw/exposure.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/res/raw/exposure.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/res/raw/hue.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/res/raw/hue.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/res/raw/saturation.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/res/raw/saturation.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/res/raw/sharpen.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/res/raw/sharpen.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/res/raw/vertex_sharpen.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/res/raw/vertex_sharpen.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/res/values/strings.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +507,12 @@
       </state>
     </system>
   </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1e3SwcO2Y1DaCkVmg1nDQZUeSC6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -60,10 +521,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ApkExportedModule" value="app" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="6dfa43b" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-06-30T20:35:46.454Z" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../yt-watchme-master (2)/yt-watchme-master" />
     <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -185,30 +647,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="528" y="284" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1593564243035" />
-    <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1593568419334">
+    <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1593723024461">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1593568419334" />
+    <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1593723024461" />
     <state x="639" y="306" key="Github.ShareDialog" timestamp="1593568481615">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="639" y="306" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1593568481615" />
-    <state width="1491" height="209" key="GridCell.Tab.0.bottom" timestamp="1593568389275">
+    <state width="1491" height="209" key="GridCell.Tab.0.bottom" timestamp="1593724712738">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593568389275" />
-    <state width="1491" height="209" key="GridCell.Tab.0.center" timestamp="1593568389273">
+    <state width="1491" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593724712738" />
+    <state width="1491" height="209" key="GridCell.Tab.0.center" timestamp="1593724712738">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593568389273" />
-    <state width="1491" height="209" key="GridCell.Tab.0.left" timestamp="1593568389272">
+    <state width="1491" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593724712738" />
+    <state width="1491" height="209" key="GridCell.Tab.0.left" timestamp="1593724712738">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593568389272" />
-    <state width="1491" height="209" key="GridCell.Tab.0.right" timestamp="1593568389273">
+    <state width="1491" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593724712738" />
+    <state width="1491" height="209" key="GridCell.Tab.0.right" timestamp="1593724712738">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593568389273" />
+    <state width="1491" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593724712738" />
     <state x="396" y="155" key="psd.add.library.dependency.panel.dimension" timestamp="1593558455010">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

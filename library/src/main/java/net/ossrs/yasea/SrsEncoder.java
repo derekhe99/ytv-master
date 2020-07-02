@@ -1,6 +1,7 @@
 package net.ossrs.yasea;
 
 import android.content.res.Configuration;
+import android.graphics.Rect;
 import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.MediaCodec;
@@ -24,19 +25,19 @@ public class SrsEncoder {
     public static final String ACODEC = "audio/mp4a-latm";
     public static String x264Preset = "veryfast";
     public static int vPrevWidth = 640;
-    public static int vPrevHeight = 480;
-    public static int vPortraitWidth = 720;
-    public static int vPortraitHeight = 1280;
-    public static int vLandscapeWidth = 1280;
-    public static int vLandscapeHeight = 720;
-    public static int vOutWidth = 720;   // Note: the stride of resolution must be set as 16x for hard encoding with some chip like MTK
-    public static int vOutHeight = 1280;  // Since Y component is quadruple size as U and V component, the stride must be set as 32x
+    public static int vPrevHeight = 360;
+    public static int vPortraitWidth = 360;
+    public static int vPortraitHeight = 640;
+    public static int vLandscapeWidth = 640;
+    public static int vLandscapeHeight = 360;
+    public static int vOutWidth = 360;   // Note: the stride of resolution must be set as 16x for hard encoding with some chip like MTK
+    public static int vOutHeight = 640;  // Since Y component is quadruple size as U and V component, the stride must be set as 32x
     public static int vBitrate = 1200 * 1024;  // 1200 kbps
     public static final int VFPS = 24;
     public static final int VGOP = 48;
     public static final int ASAMPLERATE = 44100;
     public static int aChannelConfig = AudioFormat.CHANNEL_IN_STEREO;
-    public static final int ABITRATE = 128 * 1024;  // 128 kbps
+    public static final int ABITRATE = 64 * 1024;  // 64 kbps
 
     private SrsEncodeHandler mHandler;
 
@@ -46,8 +47,6 @@ public class SrsEncoder {
     private MediaCodecInfo vmci;
     private MediaCodec vencoder;
     private MediaCodec aencoder;
-    private MediaCodec.BufferInfo vebi = new MediaCodec.BufferInfo();
-    private MediaCodec.BufferInfo aebi = new MediaCodec.BufferInfo();
 
     private boolean networkWeakTriggered = false;
     private boolean mCameraFaceFront = true;
@@ -55,6 +54,7 @@ public class SrsEncoder {
     private boolean canSoftEncode = false;
 
     private long mPresentTimeUs;
+    private long mPausetime;
 
     private int mVideoColorFormat;
 
@@ -97,7 +97,7 @@ public class SrsEncoder {
 
         // Note: the stride of resolution must be set as 16x for hard encoding with some chip like MTK
         // Since Y component is quadruple size as U and V component, the stride must be set as 32x
-        if (!useSoftEncoder && vOutWidth % 32 != 0 || vOutHeight % 32 != 0) {
+        if (!useSoftEncoder && (vOutWidth % 32 != 0 || vOutHeight % 32 != 0)) {
             if (vmci.getName().contains("MTK")) {
                 //throw new AssertionError("MTK encoding revolution stride must be 32x");
             }
@@ -171,6 +171,14 @@ public class SrsEncoder {
         return true;
     }
 
+    public void pause(){
+        mPausetime = System.nanoTime() / 1000;
+    }
+    public void resume(){
+        long resumeTime = (System.nanoTime() / 1000) - mPausetime;
+        mPresentTimeUs = mPresentTimeUs + resumeTime;
+        mPausetime = 0;
+    }
     public void stop() {
         if (useSoftEncoder) {
             closeSoftEncoder();
@@ -179,14 +187,22 @@ public class SrsEncoder {
 
         if (aencoder != null) {
             Log.i(TAG, "stop aencoder");
-            aencoder.stop();
+            try {
+                aencoder.stop();
+            }catch (IllegalStateException e){
+                e.printStackTrace();
+            }
             aencoder.release();
             aencoder = null;
         }
 
         if (vencoder != null) {
             Log.i(TAG, "stop vencoder");
-            vencoder.stop();
+            try {
+                vencoder.stop();
+            }catch (IllegalStateException e){
+                e.printStackTrace();
+            }
             vencoder.release();
             vencoder = null;
         }
@@ -284,7 +300,7 @@ public class SrsEncoder {
         
         // Note: the stride of resolution must be set as 16x for hard encoding with some chip like MTK
         // Since Y component is quadruple size as U and V component, the stride must be set as 32x
-        if (!useSoftEncoder && vOutWidth % 32 != 0 || vOutHeight % 32 != 0) {
+        if (!useSoftEncoder && (vOutWidth % 32 != 0 || vOutHeight % 32 != 0)) {
             if (vmci.getName().contains("MTK")) {
                 //throw new AssertionError("MTK encoding revolution stride must be 32x");
             }
@@ -306,6 +322,7 @@ public class SrsEncoder {
         }
 
         for (; ; ) {
+            MediaCodec.BufferInfo vebi = new MediaCodec.BufferInfo();
             int outBufferIndex = vencoder.dequeueOutputBuffer(vebi, 0);
             if (outBufferIndex >= 0) {
                 ByteBuffer bb = outBuffers[outBufferIndex];
@@ -319,6 +336,7 @@ public class SrsEncoder {
 
     private void onSoftEncodedData(byte[] es, long pts, boolean isKeyFrame) {
         ByteBuffer bb = ByteBuffer.wrap(es);
+        MediaCodec.BufferInfo vebi = new MediaCodec.BufferInfo();
         vebi.offset = 0;
         vebi.size = es.length;
         vebi.presentationTimeUs = pts;
@@ -328,39 +346,43 @@ public class SrsEncoder {
 
     // when got encoded h264 es stream.
     private void onEncodedAnnexbFrame(ByteBuffer es, MediaCodec.BufferInfo bi) {
-        ByteBuffer record = es.duplicate();
-        mp4Muxer.writeSampleData(videoMp4Track, record, bi);
+        mp4Muxer.writeSampleData(videoMp4Track, es.duplicate(), bi);
         flvMuxer.writeSampleData(videoFlvTrack, es, bi);
     }
 
     // when got encoded aac raw stream.
     private void onEncodedAacFrame(ByteBuffer es, MediaCodec.BufferInfo bi) {
-        ByteBuffer record = es.duplicate();
-        mp4Muxer.writeSampleData(audioMp4Track, record, bi);
+        mp4Muxer.writeSampleData(audioMp4Track, es.duplicate(), bi);
         flvMuxer.writeSampleData(audioFlvTrack, es, bi);
     }
 
     public void onGetPcmFrame(byte[] data, int size) {
-        ByteBuffer[] inBuffers = aencoder.getInputBuffers();
-        ByteBuffer[] outBuffers = aencoder.getOutputBuffers();
+        // Check video frame cache number to judge the networking situation.
+        // Just cache GOP / FPS seconds data according to latency.
+        AtomicInteger videoFrameCacheNumber = flvMuxer.getVideoFrameCacheNumber();
+        if (videoFrameCacheNumber != null && videoFrameCacheNumber.get() < VGOP) {
+            ByteBuffer[] inBuffers = aencoder.getInputBuffers();
+            ByteBuffer[] outBuffers = aencoder.getOutputBuffers();
 
-        int inBufferIndex = aencoder.dequeueInputBuffer(-1);
-        if (inBufferIndex >= 0) {
-            ByteBuffer bb = inBuffers[inBufferIndex];
-            bb.clear();
-            bb.put(data, 0, size);
-            long pts = System.nanoTime() / 1000 - mPresentTimeUs;
-            aencoder.queueInputBuffer(inBufferIndex, 0, size, pts, 0);
-        }
+            int inBufferIndex = aencoder.dequeueInputBuffer(-1);
+            if (inBufferIndex >= 0) {
+                ByteBuffer bb = inBuffers[inBufferIndex];
+                bb.clear();
+                bb.put(data, 0, size);
+                long pts = System.nanoTime() / 1000 - mPresentTimeUs;
+                aencoder.queueInputBuffer(inBufferIndex, 0, size, pts, 0);
+            }
 
-        for (; ; ) {
-            int outBufferIndex = aencoder.dequeueOutputBuffer(aebi, 0);
-            if (outBufferIndex >= 0) {
-                ByteBuffer bb = outBuffers[outBufferIndex];
-                onEncodedAacFrame(bb, aebi);
-                aencoder.releaseOutputBuffer(outBufferIndex, false);
-            } else {
-                break;
+            for (; ; ) {
+                MediaCodec.BufferInfo aebi = new MediaCodec.BufferInfo();
+                int outBufferIndex = aencoder.dequeueOutputBuffer(aebi, 0);
+                if (outBufferIndex >= 0) {
+                    ByteBuffer bb = outBuffers[outBufferIndex];
+                    onEncodedAacFrame(bb, aebi);
+                    aencoder.releaseOutputBuffer(outBufferIndex, false);
+                } else {
+                    break;
+                }
             }
         }
     }
@@ -392,6 +414,90 @@ public class SrsEncoder {
         }
     }
 
+    public void onGetYuvNV21Frame(byte[] data, int width, int height, Rect boundingBox) {
+        // Check video frame cache number to judge the networking situation.
+        // Just cache GOP / FPS seconds data according to latency.
+        AtomicInteger videoFrameCacheNumber = flvMuxer.getVideoFrameCacheNumber();
+        if (videoFrameCacheNumber != null && videoFrameCacheNumber.get() < VGOP) {
+            long pts = System.nanoTime() / 1000 - mPresentTimeUs;
+            if (useSoftEncoder) {
+                throw new UnsupportedOperationException("Not implemented");
+                //swRgbaFrame(data, width, height, pts);
+            } else {
+                byte[] processedData = hwYUVNV21FrameScaled(data, width, height, boundingBox);
+                if (processedData != null) {
+                    onProcessedYuvFrame(processedData, pts);
+                } else {
+                    mHandler.notifyEncodeIllegalArgumentException(new IllegalArgumentException("libyuv failure"));
+                }
+            }
+
+            if (networkWeakTriggered) {
+                networkWeakTriggered = false;
+                mHandler.notifyNetworkResume();
+            }
+        } else {
+            mHandler.notifyNetworkWeak();
+            networkWeakTriggered = true;
+        }
+    }
+
+    public void onGetArgbFrame(int[] data, int width, int height, Rect boundingBox) {
+        // Check video frame cache number to judge the networking situation.
+        // Just cache GOP / FPS seconds data according to latency.
+        AtomicInteger videoFrameCacheNumber = flvMuxer.getVideoFrameCacheNumber();
+        if (videoFrameCacheNumber != null && videoFrameCacheNumber.get() < VGOP) {
+            long pts = System.nanoTime() / 1000 - mPresentTimeUs;
+            if (useSoftEncoder) {
+                throw new UnsupportedOperationException("Not implemented");
+                //swArgbFrame(data, width, height, pts);
+            } else {
+                byte[] processedData = hwArgbFrameScaled(data, width, height, boundingBox);
+                if (processedData != null) {
+                    onProcessedYuvFrame(processedData, pts);
+                } else {
+                    mHandler.notifyEncodeIllegalArgumentException(new IllegalArgumentException("libyuv failure"));
+                }
+            }
+
+            if (networkWeakTriggered) {
+                networkWeakTriggered = false;
+                mHandler.notifyNetworkResume();
+            }
+        } else {
+            mHandler.notifyNetworkWeak();
+            networkWeakTriggered = true;
+        }
+    }
+
+    public void onGetArgbFrame(int[] data, int width, int height) {
+        // Check video frame cache number to judge the networking situation.
+        // Just cache GOP / FPS seconds data according to latency.
+        AtomicInteger videoFrameCacheNumber = flvMuxer.getVideoFrameCacheNumber();
+        if (videoFrameCacheNumber != null && videoFrameCacheNumber.get() < VGOP) {
+            long pts = System.nanoTime() / 1000 - mPresentTimeUs;
+            if (useSoftEncoder) {
+                throw new UnsupportedOperationException("Not implemented");
+                //swArgbFrame(data, width, height, pts);
+            } else {
+                byte[] processedData = hwArgbFrame(data, width, height);
+                if (processedData != null) {
+                    onProcessedYuvFrame(processedData, pts);
+                } else {
+                    mHandler.notifyEncodeIllegalArgumentException(new IllegalArgumentException("libyuv failure"));
+                }
+            }
+
+            if (networkWeakTriggered) {
+                networkWeakTriggered = false;
+                mHandler.notifyNetworkResume();
+            }
+        } else {
+            mHandler.notifyNetworkWeak();
+            networkWeakTriggered = true;
+        }
+    }
+
     private byte[] hwRgbaFrame(byte[] data, int width, int height) {
         switch (mVideoColorFormat) {
             case MediaCodecInfo.CodecCapabilities.COLOR_FormatYUV420Planar:
@@ -403,15 +509,48 @@ public class SrsEncoder {
         }
     }
 
+    private byte[] hwYUVNV21FrameScaled(byte[] data, int width, int height, Rect boundingBox) {
+        switch (mVideoColorFormat) {
+            case MediaCodecInfo.CodecCapabilities.COLOR_FormatYUV420Planar:
+                return NV21ToI420Scaled(data, width, height, true, 180, boundingBox.left, boundingBox.top, boundingBox.width(), boundingBox.height());
+            case MediaCodecInfo.CodecCapabilities.COLOR_FormatYUV420SemiPlanar:
+                return NV21ToNV12Scaled(data, width, height, true, 180, boundingBox.left, boundingBox.top, boundingBox.width(), boundingBox.height());
+            default:
+                throw new IllegalStateException("Unsupported color format!");
+        }
+    }
+
+    private byte[] hwArgbFrameScaled(int[] data, int width, int height, Rect boundingBox) {
+        switch (mVideoColorFormat) {
+            case MediaCodecInfo.CodecCapabilities.COLOR_FormatYUV420Planar:
+                return ARGBToI420Scaled(data, width, height, false, 0, boundingBox.left, boundingBox.top, boundingBox.width(), boundingBox.height());
+            case MediaCodecInfo.CodecCapabilities.COLOR_FormatYUV420SemiPlanar:
+                return ARGBToNV12Scaled(data, width, height, false, 0, boundingBox.left, boundingBox.top, boundingBox.width(), boundingBox.height());
+            default:
+                throw new IllegalStateException("Unsupported color format!");
+        }
+    }
+
+    private byte[] hwArgbFrame(int[] data, int inputWidth, int inputHeight) {
+        switch (mVideoColorFormat) {
+            case MediaCodecInfo.CodecCapabilities.COLOR_FormatYUV420Planar:
+                return ARGBToI420(data, inputWidth, inputHeight, false, 0);
+            case MediaCodecInfo.CodecCapabilities.COLOR_FormatYUV420SemiPlanar:
+                return ARGBToNV12(data, inputWidth, inputHeight, false, 0);
+            default:
+                throw new IllegalStateException("Unsupported color format!");
+        }
+    }
+
     private void swRgbaFrame(byte[] data, int width, int height, long pts) {
         RGBASoftEncode(data, width, height, true, 180, pts);
     }
 
     public AudioRecord chooseAudioRecord() {
-        AudioRecord mic = new AudioRecord(MediaRecorder.AudioSource.DEFAULT, SrsEncoder.ASAMPLERATE,
+        AudioRecord mic = new AudioRecord(MediaRecorder.AudioSource.VOICE_COMMUNICATION, SrsEncoder.ASAMPLERATE,
             AudioFormat.CHANNEL_IN_STEREO, AudioFormat.ENCODING_PCM_16BIT, getPcmBufferSize() * 4);
         if (mic.getState() != AudioRecord.STATE_INITIALIZED) {
-            mic = new AudioRecord(MediaRecorder.AudioSource.DEFAULT, SrsEncoder.ASAMPLERATE,
+            mic = new AudioRecord(MediaRecorder.AudioSource.VOICE_COMMUNICATION, SrsEncoder.ASAMPLERATE,
                 AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_16BIT, getPcmBufferSize() * 4);
             if (mic.getState() != AudioRecord.STATE_INITIALIZED) {
                 mic = null;
@@ -497,9 +636,15 @@ public class SrsEncoder {
     private native void setEncoderGop(int gop);
     private native void setEncoderBitrate(int bitrate);
     private native void setEncoderPreset(String preset);
-    private native byte[] RGBAToI420(byte[] rgbaFrame, int width, int height, boolean flip, int rotate);
-    private native byte[] RGBAToNV12(byte[] rgbaFrame, int width, int height, boolean flip, int rotate);
-    private native int RGBASoftEncode(byte[] rgbaFrame, int width, int height, boolean flip, int rotate, long pts);
+    private native byte[] RGBAToI420(byte[] frame, int width, int height, boolean flip, int rotate);
+    private native byte[] RGBAToNV12(byte[] frame, int width, int height, boolean flip, int rotate);
+    private native byte[] ARGBToI420Scaled(int[] frame, int width, int height, boolean flip, int rotate, int crop_x, int crop_y,int crop_width, int crop_height);
+    private native byte[] ARGBToNV12Scaled(int[] frame, int width, int height, boolean flip, int rotate, int crop_x, int crop_y,int crop_width, int crop_height);
+    private native byte[] ARGBToI420(int[] frame, int width, int height, boolean flip, int rotate);
+    private native byte[] ARGBToNV12(int[] frame, int width, int height, boolean flip, int rotate);
+    private native byte[] NV21ToNV12Scaled(byte[] frame, int width, int height, boolean flip, int rotate, int crop_x, int crop_y,int crop_width, int crop_height);
+    private native byte[] NV21ToI420Scaled(byte[] frame, int width, int height, boolean flip, int rotate, int crop_x, int crop_y,int crop_width, int crop_height);
+    private native int RGBASoftEncode(byte[] frame, int width, int height, boolean flip, int rotate, long pts);
     private native boolean openSoftEncoder();
     private native void closeSoftEncoder();
 

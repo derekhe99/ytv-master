@@ -1,5 +1,6 @@
 package net.ossrs.yasea;
 
+import android.hardware.Camera;
 import android.media.AudioRecord;
 import android.media.audiofx.AcousticEchoCanceler;
 import android.media.audiofx.AutomaticGainControl;
@@ -22,6 +23,7 @@ public class SrsPublisher {
 
     private SrsCameraView mCameraView;
 
+    private boolean sendVideoOnly = false;
     private boolean sendAudioOnly = false;
     private int videoFrameCount;
     private long lastTimeMillis;
@@ -92,11 +94,20 @@ public class SrsPublisher {
                 android.os.Process.setThreadPriority(android.os.Process.THREAD_PRIORITY_AUDIO);
                 mic.startRecording();
                 while (!Thread.interrupted()) {
-                    int size = mic.read(mPcmBuffer, 0, mPcmBuffer.length);
-                    if (size <= 0) {
-                        break;
+                    if (sendVideoOnly) {
+                        mEncoder.onGetPcmFrame(mPcmBuffer, mPcmBuffer.length);
+                        try {
+                            // This is trivial...
+                            Thread.sleep(20);
+                        } catch (InterruptedException e) {
+                            break;
+                        }
+                    } else {
+                        int size = mic.read(mPcmBuffer, 0, mPcmBuffer.length);
+                        if (size > 0) {
+                            mEncoder.onGetPcmFrame(mPcmBuffer, size);
+                        }
                     }
-                    mEncoder.onGetPcmFrame(mPcmBuffer, size);
                 }
             }
         });
@@ -149,12 +160,27 @@ public class SrsPublisher {
         stopCamera();
         mEncoder.stop();
     }
+    public void pauseEncode(){
+        stopAudio();
+        mCameraView.disableEncoding();
+        mCameraView.stopTorch();
+    }
+    private void resumeEncode() {
+        startAudio();
+        mCameraView.enableEncoding();
+    }
 
     public void startPublish(String rtmpUrl) {
         if (mFlvMuxer != null) {
             mFlvMuxer.start(rtmpUrl);
             mFlvMuxer.setVideoResolution(mEncoder.getOutputWidth(), mEncoder.getOutputHeight());
             startEncode();
+        }
+    }
+    public void resumePublish(){
+        if(mFlvMuxer != null) {
+            mEncoder.resume();
+            resumeEncode();
         }
     }
 
@@ -165,6 +191,12 @@ public class SrsPublisher {
         }
     }
 
+    public void pausePublish(){
+        if (mFlvMuxer != null) {
+            mEncoder.pause();
+            pauseEncode();
+        }
+    }
     public boolean startRecord(String recPath) {
         return mMp4Muxer != null && mMp4Muxer.record(new File(recPath));
     }
@@ -185,6 +217,17 @@ public class SrsPublisher {
         if (mMp4Muxer != null) {
             mMp4Muxer.resume();
         }
+    }
+
+    public boolean isAllFramesUploaded(){
+        return mFlvMuxer.getVideoFrameCacheNumber().get() == 0;
+    }
+
+    public int getVideoFrameCacheCount(){
+        if(mFlvMuxer != null) {
+            return mFlvMuxer.getVideoFrameCacheNumber().get();
+        }
+        return 0;
     }
 
     public void switchToSoftEncoder() {
@@ -211,9 +254,13 @@ public class SrsPublisher {
         return mSamplingFps;
     }
 
-    public int getCamraId() {
+    public int getCameraId() {
         return mCameraView.getCameraId();
     }
+    
+    public Camera getCamera() {
+        return mCameraView.getCamera();
+    }     
 
     public void setPreviewResolution(int width, int height) {
         int resolution[] = mCameraView.setPreviewResolution(width, height);
@@ -239,6 +286,18 @@ public class SrsPublisher {
 
     public void setVideoSmoothMode() {
         mEncoder.setVideoSmoothMode();
+    }
+
+    public void setSendVideoOnly(boolean flag) {
+        if (mic != null) {
+            if (flag) {
+                mic.stop();
+                mPcmBuffer = new byte[4096];
+            } else {
+                mic.startRecording();
+            }
+        }
+        sendVideoOnly = flag;
     }
 
     public void setSendAudioOnly(boolean flag) {

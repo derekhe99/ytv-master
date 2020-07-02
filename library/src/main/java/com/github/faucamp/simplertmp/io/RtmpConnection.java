@@ -94,6 +94,7 @@ public class RtmpConnection implements RtmpPublisher {
         handshake.readS0(in);
         handshake.readS1(in);
         handshake.writeC2(out);
+        out.flush();
         handshake.readS2(in);
     }
 
@@ -111,7 +112,13 @@ public class RtmpConnection implements RtmpPublisher {
             streamName = matcher.group(6);
         } else {
             mHandler.notifyRtmpIllegalArgumentException(new IllegalArgumentException(
-                "Invalid RTMP URL. Must be in format: rtmp://host[:port]/application[/streamName]"));
+                "Invalid RTMP URL. Must be in format: rtmp://host[:port]/application/streamName"));
+            return false;
+        }
+
+        if (streamName == null || appName == null) {
+            mHandler.notifyRtmpIllegalArgumentException(new IllegalArgumentException(
+                "Invalid RTMP URL. Must be in format: rtmp://host[:port]/application/streamName"));
             return false;
         }
 
@@ -519,9 +526,7 @@ public class RtmpConnection implements RtmpPublisher {
                             UserControl user = (UserControl) rtmpPacket;
                             switch (user.getType()) {
                                 case STREAM_BEGIN:
-                                    if (currentStreamId != user.getFirstEventData()) {
-                                        mHandler.notifyRtmpIllegalStateException(new IllegalStateException("Current stream ID error!"));
-                                    }
+                                    Log.d(TAG, "handleRxPacketLoop(): Receive STREAM_BEGIN");
                                     break;
                                 case PING_REQUEST:
                                     ChunkStreamInfo channelInfo = rtmpSessionInfo.getChunkStreamInfo(ChunkStreamInfo.RTMP_CID_PROTOCOL_CONTROL);
