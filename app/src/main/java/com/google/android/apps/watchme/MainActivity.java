@@ -28,6 +28,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.ActivityCompat;
+import android.util.EventLog;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -41,6 +42,7 @@ import com.google.android.apps.watchme.util.NetworkSingleton;
 import com.google.android.apps.watchme.util.Utils;
 import com.google.android.apps.watchme.util.YouTubeApi;
 import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
 import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException;
@@ -61,7 +63,7 @@ import java.util.List;
  *         Main activity class which handles authorization and intents.
  */
 public class MainActivity extends Activity implements
-        EventsListFragment.Callbacks {
+        EventsListFragment.Callbacks{
     public static final String ACCOUNT_KEY = "accountName";
     public static final String APP_NAME = "watch";
     private static final int REQUEST_GOOGLE_PLAY_SERVICES = 0;
@@ -377,6 +379,7 @@ public class MainActivity extends Activity implements
             } catch (IOException e) {
                 Log.e(MainActivity.APP_NAME, "", e);
             }
+
             return null;
         }
 
@@ -386,6 +389,9 @@ public class MainActivity extends Activity implements
 
             Button buttonCreateEvent = (Button) findViewById(R.id.create_button);
             buttonCreateEvent.setEnabled(true);
+
+            Log.e(MainActivity.APP_NAME, fetchedEvents.get(fetchedEvents.size()-1).getIngestionAddress());
+            startStreaming(fetchedEvents.get(fetchedEvents.size()-1));
 
             progressDialog.dismiss();
         }

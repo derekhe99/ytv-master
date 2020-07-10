@@ -62,7 +62,7 @@ public class YouTubeStreamActivity extends Activity implements RtmpHandler.RtmpL
 
         // restore data.
         sp = getSharedPreferences("Yasea", MODE_PRIVATE);
-        rtmpUrl = sp.getString("rtmpUrl", rtmpUrl);
+        //rtmpUrl = sp.getString("rtmpUrl", rtmpUrl);
 
         // initialize url.
         final EditText efu = (EditText) findViewById(R.id.url);
