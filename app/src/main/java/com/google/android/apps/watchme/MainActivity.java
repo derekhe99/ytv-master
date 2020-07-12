@@ -19,14 +19,17 @@ import android.accounts.AccountManager;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.provider.ContactsContract;
 import android.support.v4.app.ActivityCompat;
 import android.util.EventLog;
 import android.util.Log;
@@ -53,6 +56,7 @@ import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.services.youtube.YouTube;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -63,7 +67,7 @@ import java.util.List;
  *         Main activity class which handles authorization and intents.
  */
 public class MainActivity extends Activity implements
-        EventsListFragment.Callbacks{
+        EventsListFragment.Callbacks, SharedPreferences.OnSharedPreferenceChangeListener{
     public static final String ACCOUNT_KEY = "accountName";
     public static final String APP_NAME = "watch";
     private static final int REQUEST_GOOGLE_PLAY_SERVICES = 0;
@@ -78,7 +82,9 @@ public class MainActivity extends Activity implements
     private ImageLoader mImageLoader;
     private EventsListFragment mEventsListFragment;
     String[] PERMISSIONS = {Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO,
-            Manifest.permission.GET_ACCOUNTS, Manifest.permission.ACCESS_NETWORK_STATE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+            Manifest.permission.GET_ACCOUNTS, Manifest.permission.ACCESS_NETWORK_STATE,
+            Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.SEND_SMS, Manifest.permission.ACCESS_FINE_LOCATION};
     int PERMISSION_ALL = 1;
 
     @Override
@@ -107,6 +113,28 @@ public class MainActivity extends Activity implements
 
         mEventsListFragment = (EventsListFragment) getFragmentManager()
                 .findFragmentById(R.id.list_fragment);
+
+        setupSharedPreferences();
+    }
+
+    private void setupSharedPreferences() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+
+        if (key.equals("display_text")) {
+
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        android.support.v7.preference.PreferenceManager.getDefaultSharedPreferences(this)
+                .unregisterOnSharedPreferenceChangeListener(this);
     }
 
     public static boolean hasPermissions(Context context, String... permissions) {
@@ -175,6 +203,11 @@ public class MainActivity extends Activity implements
         getLiveEvents();
     }
 
+    private void openContacts(){
+        Intent myIntent = new Intent(this, ContactList.class);
+        startActivityForResult(myIntent, 0);
+    }
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -196,6 +229,9 @@ public class MainActivity extends Activity implements
             case R.id.menu_accounts:
                 chooseAccount();
                 return true;
+            case R.id.emergency_contacts:
+                openContacts();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

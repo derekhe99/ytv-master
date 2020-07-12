@@ -8,12 +8,12 @@
         "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\layout\\list_fragment.xml"
     },
     {
-        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_item.xml.flat",
-        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\layout\\list_item.xml"
-    },
-    {
         "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_item.xml.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\layout\\list_item.xml"
     },
     {
         "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_av_play_arrow.png.flat",
@@ -26,6 +26,10 @@
     {
         "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_device_access_video.png.flat",
         "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\drawable-mdpi\\ic_device_access_video.png"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_contact_list.xml.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\layout\\contact_list.xml"
     },
     {
         "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_av_play_arrow.png.flat",
@@ -58,6 +62,10 @@
     {
         "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_device_access_video.png.flat",
         "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\drawable-xhdpi\\ic_device_access_video.png"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\xml_contact_list_preferences.xml.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\xml\\contact_list_preferences.xml"
     },
     {
         "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_streamer.xml.flat",
