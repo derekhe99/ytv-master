@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\iancp\\.gradle\\caches\\transforms-2\\files-2.1\\ccbd3881d3e597a650ace942161206f5\\support-compat-28.0.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\iancp\\.gradle\\caches\\transforms-2\\files-2.1\\f88df7c86cbc989e82020e686162bad6\\core-1.0.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\iancp\\.gradle\\caches\\transforms-2\\files-2.1\\0c91d46fdd28334f30b1556655513aca\\appcompat-v7-28.0.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\iancp\\.gradle\\caches\\transforms-2\\files-2.1\\4c1e222132d7c6df463bbb7b701f43ab\\appcompat-1.0.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

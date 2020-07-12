@@ -2,14 +2,11 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width = "match_parent"
     android:layout_height = "match_parent">
-    <MultiSelectListPreference
-        android:dialogTitle ="Contact List"
-        android:key="contact_list"
-        android:summary=""
-        android:title="Contact List"
-        android:entries="@array/empty_array"
-        android:entryValues="@array/empty_array"
-        android:defaultValue="@array/empty_array"
-        android:persistent="true"
-        />
+    <com.google.android.apps.watchme.util.ContactListPreference
+        android:key="select_contact"
+        android:title="Select Emergency Contact"
+        android:summary="This person will receive an automatic text with your live stream and location"
+        android:entries="@array/listArray"
+        android:entryValues="@array/listValues"
+        android:defaultValue="1"/>
 </PreferenceScreen>

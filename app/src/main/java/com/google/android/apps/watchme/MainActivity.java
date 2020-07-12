@@ -19,19 +19,18 @@ import android.accounts.AccountManager;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.provider.ContactsContract;
-import android.support.v4.app.ActivityCompat;
-import android.util.EventLog;
+
+import androidx.core.app.ActivityCompat;
+
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -45,7 +44,6 @@ import com.google.android.apps.watchme.util.NetworkSingleton;
 import com.google.android.apps.watchme.util.Utils;
 import com.google.android.apps.watchme.util.YouTubeApi;
 import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
 import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException;
@@ -56,7 +54,6 @@ import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.services.youtube.YouTube;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -86,6 +83,7 @@ public class MainActivity extends Activity implements
             Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.SEND_SMS, Manifest.permission.ACCESS_FINE_LOCATION};
     int PERMISSION_ALL = 1;
+    String phoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,16 +122,16 @@ public class MainActivity extends Activity implements
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-
-        if (key.equals("display_text")) {
-
+        if (key.equals("select_contact")) {
+            phoneNumber = sharedPreferences.getString("select_contact", "DEFAULT");
         }
+
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        android.support.v7.preference.PreferenceManager.getDefaultSharedPreferences(this)
+        androidx.preference.PreferenceManager.getDefaultSharedPreferences(this)
                 .unregisterOnSharedPreferenceChangeListener(this);
     }
 
@@ -428,6 +426,12 @@ public class MainActivity extends Activity implements
 
             Log.e(MainActivity.APP_NAME, fetchedEvents.get(fetchedEvents.size()-1).getIngestionAddress());
             startStreaming(fetchedEvents.get(fetchedEvents.size()-1));
+
+            if (phoneNumber != "1"){
+                SmsManager smgr = SmsManager.getDefault();
+                Log.e("SENDING", "Sending Message RIGHT NOW to " + phoneNumber);
+                smgr.sendTextMessage(phoneNumber,null, "your friend has been pulled over!",null,null);
+            }
 
             progressDialog.dismiss();
         }

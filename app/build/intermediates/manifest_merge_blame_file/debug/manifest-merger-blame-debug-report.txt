@@ -100,8 +100,8 @@
 56-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:53:5-86:19
 57        android:allowBackup="true"
 57-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:54:9-35
-58        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
-58-->[com.android.support:support-compat:28.0.0] C:\Users\iancp\.gradle\caches\transforms-2\files-2.1\ccbd3881d3e597a650ace942161206f5\support-compat-28.0.0\AndroidManifest.xml:22:18-91
+58        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+58-->[androidx.core:core:1.0.0] C:\Users\iancp\.gradle\caches\transforms-2\files-2.1\f88df7c86cbc989e82020e686162bad6\core-1.0.0\AndroidManifest.xml:22:18-86
 59        android:debuggable="true"
 60        android:extractNativeLibs="false"
 61        android:icon="@drawable/ic_launcher"
@@ -165,11 +165,11 @@
 91        </activity>
 92
 93        <meta-data
-93-->[com.google.android.gms:play-services-base:7.8.0] C:\Users\iancp\.gradle\caches\transforms-2\files-2.1\7c5dd3962736719dd7d3f7732271a0ac\play-services-base-7.8.0\AndroidManifest.xml:21:9-23:69
+93-->[com.google.android.gms:play-services-base:7.8.0] C:\Users\iancp\.gradle\caches\transforms-2\files-2.1\12a51a2d4bda57709e81362ab73379f4\jetified-play-services-base-7.8.0\AndroidManifest.xml:21:9-23:69
 94            android:name="com.google.android.gms.version"
-94-->[com.google.android.gms:play-services-base:7.8.0] C:\Users\iancp\.gradle\caches\transforms-2\files-2.1\7c5dd3962736719dd7d3f7732271a0ac\play-services-base-7.8.0\AndroidManifest.xml:22:13-58
+94-->[com.google.android.gms:play-services-base:7.8.0] C:\Users\iancp\.gradle\caches\transforms-2\files-2.1\12a51a2d4bda57709e81362ab73379f4\jetified-play-services-base-7.8.0\AndroidManifest.xml:22:13-58
 95            android:value="@integer/google_play_services_version" />
-95-->[com.google.android.gms:play-services-base:7.8.0] C:\Users\iancp\.gradle\caches\transforms-2\files-2.1\7c5dd3962736719dd7d3f7732271a0ac\play-services-base-7.8.0\AndroidManifest.xml:23:13-66
+95-->[com.google.android.gms:play-services-base:7.8.0] C:\Users\iancp\.gradle\caches\transforms-2\files-2.1\12a51a2d4bda57709e81362ab73379f4\jetified-play-services-base-7.8.0\AndroidManifest.xml:23:13-66
 96    </application>
 97
 98</manifest>
