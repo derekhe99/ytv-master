@@ -1,0 +1,110 @@
+[
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_av_play_arrow.png.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\drawable-hdpi\\ic_av_play_arrow.png"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_fragment.xml.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\layout\\list_fragment.xml"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_item.xml.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\layout\\list_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_av_play_arrow.png.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\drawable-mdpi\\ic_av_play_arrow.png"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_device_access_video.png.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\drawable-mdpi\\ic_device_access_video.png"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_contact_list.xml.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\layout\\contact_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_av_play_arrow.png.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\drawable-xhdpi\\ic_av_play_arrow.png"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_mailboxes_accounts.png.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\drawable-mdpi\\ic_mailboxes_accounts.png"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_main.xml.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\menu\\menu_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_av_play_arrow.png.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\drawable-xxhdpi\\ic_av_play_arrow.png"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_menu_refresh.png.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\drawable-mdpi\\ic_menu_refresh.png"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_list_divider_horizontal_inset.xml.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\drawable\\list_divider_horizontal_inset.xml"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_device_access_video.png.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\drawable-xhdpi\\ic_device_access_video.png"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\xml_contact_list_preferences.xml.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\xml\\contact_list_preferences.xml"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_streamer.xml.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\layout\\streamer.xml"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_menu_refresh.png.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\drawable-xhdpi\\ic_menu_refresh.png"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_you_tube_stream.xml.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\layout\\activity_you_tube_stream.xml"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_list_divider_holo_dark.png.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\drawable-xhdpi\\list_divider_holo_dark.png"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\menu_activity_main.xml.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\menu\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_device_access_video.png.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\drawable-hdpi\\ic_device_access_video.png"
+    },
+    {
+        "merged": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_device_access_video.png.flat",
+        "source": "C:\\Users\\iancp\\Downloads\\ytv-master\\ytv-master\\app\\src\\main\\res\\drawable-xxhdpi\\ic_device_access_video.png"
+    }
+]

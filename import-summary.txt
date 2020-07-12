@@ -1,0 +1,245 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .DS_Store
+* .idea\
+* .idea\MainActivity.iml
+* .idea\compiler.xml
+* .idea\copyright\
+* .idea\copyright\profiles_settings.xml
+* .idea\encodings.xml
+* .idea\misc.xml
+* .idea\modules.xml
+* .idea\workspace.xml
+* third_party\
+* third_party\.DS_Store
+* third_party\lame3995\
+* third_party\lame3995\include\
+* third_party\lame3995\include\Makefile.am
+* third_party\lame3995\include\Makefile.in
+* third_party\lame3995\include\lame.def
+* third_party\lame3995\include\lame.h
+* third_party\lame3995\include\libmp3lame.sym
+* third_party\lame3995\libmp3lame\
+* third_party\lame3995\libmp3lame\Makefile.am
+* third_party\lame3995\libmp3lame\Makefile.in
+* third_party\lame3995\libmp3lame\VbrTag.c
+* third_party\lame3995\libmp3lame\VbrTag.h
+* third_party\lame3995\libmp3lame\bitstream.c
+* third_party\lame3995\libmp3lame\bitstream.h
+* third_party\lame3995\libmp3lame\depcomp
+* third_party\lame3995\libmp3lame\encoder.c
+* third_party\lame3995\libmp3lame\encoder.h
+* third_party\lame3995\libmp3lame\fft.c
+* third_party\lame3995\libmp3lame\fft.h
+* third_party\lame3995\libmp3lame\gain_analysis.c
+* third_party\lame3995\libmp3lame\gain_analysis.h
+* third_party\lame3995\libmp3lame\i386\
+* third_party\lame3995\libmp3lame\i386\Makefile.am
+* third_party\lame3995\libmp3lame\i386\Makefile.in
+* third_party\lame3995\libmp3lame\i386\choose_table.nas
+* third_party\lame3995\libmp3lame\i386\cpu_feat.nas
+* third_party\lame3995\libmp3lame\i386\fft.nas
+* third_party\lame3995\libmp3lame\i386\fft3dn.nas
+* third_party\lame3995\libmp3lame\i386\fftfpu.nas
+* third_party\lame3995\libmp3lame\i386\fftsse.nas
+* third_party\lame3995\libmp3lame\i386\ffttbl.nas
+* third_party\lame3995\libmp3lame\i386\nasm.h
+* third_party\lame3995\libmp3lame\i386\scalar.nas
+* third_party\lame3995\libmp3lame\id3tag.c
+* third_party\lame3995\libmp3lame\id3tag.h
+* third_party\lame3995\libmp3lame\l3side.h
+* third_party\lame3995\libmp3lame\lame-analysis.h
+* third_party\lame3995\libmp3lame\lame.c
+* third_party\lame3995\libmp3lame\lame.rc
+* third_party\lame3995\libmp3lame\lame_global_flags.h
+* third_party\lame3995\libmp3lame\lameerror.h
+* third_party\lame3995\libmp3lame\logoe.ico
+* third_party\lame3995\libmp3lame\machine.h
+* third_party\lame3995\libmp3lame\mpglib_interface.c
+* third_party\lame3995\libmp3lame\newmdct.c
+* third_party\lame3995\libmp3lame\newmdct.h
+* third_party\lame3995\libmp3lame\presets.c
+* third_party\lame3995\libmp3lame\psymodel.c
+* third_party\lame3995\libmp3lame\psymodel.h
+* third_party\lame3995\libmp3lame\quantize.c
+* third_party\lame3995\libmp3lame\quantize.h
+* third_party\lame3995\libmp3lame\quantize_pvt.c
+* third_party\lame3995\libmp3lame\quantize_pvt.h
+* third_party\lame3995\libmp3lame\reservoir.c
+* third_party\lame3995\libmp3lame\reservoir.h
+* third_party\lame3995\libmp3lame\set_get.c
+* third_party\lame3995\libmp3lame\set_get.h
+* third_party\lame3995\libmp3lame\tables.c
+* third_party\lame3995\libmp3lame\tables.h
+* third_party\lame3995\libmp3lame\takehiro.c
+* third_party\lame3995\libmp3lame\util.c
+* third_party\lame3995\libmp3lame\util.h
+* third_party\lame3995\libmp3lame\vbrquantize.c
+* third_party\lame3995\libmp3lame\vbrquantize.h
+* third_party\lame3995\libmp3lame\vector\
+* third_party\lame3995\libmp3lame\vector\Makefile.am
+* third_party\lame3995\libmp3lame\vector\Makefile.in
+* third_party\lame3995\libmp3lame\vector\lame_intrin.h
+* third_party\lame3995\libmp3lame\vector\xmm_quantize_sub.c
+* third_party\lame3995\libmp3lame\version.c
+* third_party\lame3995\libmp3lame\version.h
+* third_party\lame\
+* third_party\lame\include\
+* third_party\lame\include\Makefile.am
+* third_party\lame\include\Makefile.in
+* third_party\lame\include\lame.def
+* third_party\lame\include\lame.h
+* third_party\lame\libmp3lame\
+* third_party\lame\libmp3lame\Makefile.am
+* third_party\lame\libmp3lame\Makefile.in
+* third_party\lame\libmp3lame\VbrTag.c
+* third_party\lame\libmp3lame\VbrTag.h
+* third_party\lame\libmp3lame\bitstream.c
+* third_party\lame\libmp3lame\bitstream.h
+* third_party\lame\libmp3lame\depcomp
+* third_party\lame\libmp3lame\encoder.c
+* third_party\lame\libmp3lame\encoder.h
+* third_party\lame\libmp3lame\fft.c
+* third_party\lame\libmp3lame\fft.h
+* third_party\lame\libmp3lame\gain_analysis.c
+* third_party\lame\libmp3lame\gain_analysis.h
+* third_party\lame\libmp3lame\i386\
+* third_party\lame\libmp3lame\i386\Makefile.am
+* third_party\lame\libmp3lame\i386\Makefile.in
+* third_party\lame\libmp3lame\i386\choose_table.nas
+* third_party\lame\libmp3lame\i386\cpu_feat.nas
+* third_party\lame\libmp3lame\i386\fft.nas
+* third_party\lame\libmp3lame\i386\fft3dn.nas
+* third_party\lame\libmp3lame\i386\fftfpu.nas
+* third_party\lame\libmp3lame\i386\fftsse.nas
+* third_party\lame\libmp3lame\i386\ffttbl.nas
+* third_party\lame\libmp3lame\i386\nasm.h
+* third_party\lame\libmp3lame\id3tag.c
+* third_party\lame\libmp3lame\id3tag.h
+* third_party\lame\libmp3lame\l3side.h
+* third_party\lame\libmp3lame\lame-analysis.h
+* third_party\lame\libmp3lame\lame.c
+* third_party\lame\libmp3lame\lame.rc
+* third_party\lame\libmp3lame\lame_global_flags.h
+* third_party\lame\libmp3lame\libmp3lame_dll_vc6.dsp
+* third_party\lame\libmp3lame\libmp3lame_vc6.dsp
+* third_party\lame\libmp3lame\libmp3lame_vc8.vcproj
+* third_party\lame\libmp3lame\logoe.ico
+* third_party\lame\libmp3lame\machine.h
+* third_party\lame\libmp3lame\mpglib_interface.c
+* third_party\lame\libmp3lame\newmdct.c
+* third_party\lame\libmp3lame\newmdct.h
+* third_party\lame\libmp3lame\presets.c
+* third_party\lame\libmp3lame\psymodel.c
+* third_party\lame\libmp3lame\psymodel.h
+* third_party\lame\libmp3lame\quantize.c
+* third_party\lame\libmp3lame\quantize.h
+* third_party\lame\libmp3lame\quantize_pvt.c
+* third_party\lame\libmp3lame\quantize_pvt.h
+* third_party\lame\libmp3lame\reservoir.c
+* third_party\lame\libmp3lame\reservoir.h
+* third_party\lame\libmp3lame\set_get.c
+* third_party\lame\libmp3lame\set_get.h
+* third_party\lame\libmp3lame\tables.c
+* third_party\lame\libmp3lame\tables.h
+* third_party\lame\libmp3lame\takehiro.c
+* third_party\lame\libmp3lame\util.c
+* third_party\lame\libmp3lame\util.h
+* third_party\lame\libmp3lame\vbrquantize.c
+* third_party\lame\libmp3lame\vbrquantize.h
+* third_party\lame\libmp3lame\vector\
+* third_party\lame\libmp3lame\vector\Makefile.am
+* third_party\lame\libmp3lame\vector\Makefile.in
+* third_party\lame\libmp3lame\vector\lame_intrin.h
+* third_party\lame\libmp3lame\vector\xmm_quantize_sub.c
+* third_party\lame\libmp3lame\version.c
+* third_party\lame\libmp3lame\version.h
+* third_party\lib\
+* third_party\lib\libavcodec.a
+* third_party\lib\libavdevice.a
+* third_party\lib\libavfilter.a
+* third_party\lib\libavformat.a
+* third_party\lib\libavresample.a
+* third_party\lib\libavutil.a
+* third_party\lib\libfdk-aac.a
+* third_party\lib\libpostproc.a
+* third_party\lib\libswresample.a
+* third_party\lib\libswscale.a
+* third_party\lib\libx264.a
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:20.0.0
+google-http-client-gson-1.19.0.jar => com.google.http-client:google-http-client-gson:1.20.0
+gson-2.1.jar => com.google.code.gson:gson:2.1
+
+Potentially Missing Dependency:
+-------------------------------
+When we replaced the following .jar files with a Gradle dependency, we
+inferred the dependency version number from the filename. This
+specific version may not actually be available from the repository.
+If you get a build error stating that the dependency is missing, edit
+the version number to for example "+" to pick up the latest version
+instead. (This may require you to update your code if the library APIs
+have changed.)
+
+gson-2.1.jar => version 2.1 in com.google.code.gson:gson:2.1
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app\src\main\AndroidManifest.xml
+* assets\ => app\src\main\assets
+* jni\ => app\src\main\jni\
+* libs\armeabi-v7a\libffmpeg.so => app\src\main\jniLibs\armeabi-v7a\libffmpeg.so
+* libs\google-api-client-1.19.0.jar => app\libs\google-api-client-1.19.0.jar
+* libs\google-api-client-android-1.19.0.jar => app\libs\google-api-client-android-1.19.0.jar
+* libs\google-api-client-gson-1.19.0.jar => app\libs\google-api-client-gson-1.19.0.jar
+* libs\google-api-client-jackson2-1.19.0.jar => app\libs\google-api-client-jackson2-1.19.0.jar
+* libs\google-api-services-youtube-v3-rev120-1.19.0.jar => app\libs\google-api-services-youtube-v3-rev120-1.19.0.jar
+* libs\google-http-client-1.19.0.jar => app\libs\google-http-client-1.19.0.jar
+* libs\google-http-client-android-1.19.0.jar => app\libs\google-http-client-android-1.19.0.jar
+* libs\google-http-client-jackson2-1.19.0.jar => app\libs\google-http-client-jackson2-1.19.0.jar
+* libs\google-oauth-client-1.19.0.jar => app\libs\google-oauth-client-1.19.0.jar
+* libs\jackson-core-2.1.3.jar => app\libs\jackson-core-2.1.3.jar
+* libs\jsr305-1.3.9.jar => app\libs\jsr305-1.3.9.jar
+* res\ => app\src\main\res\
+* src\ => app\src\main\java\
+* src\.DS_Store => app\src\main\resources\.DS_Store
+* src\com\.DS_Store => app\src\main\resources\com\.DS_Store
+* src\com\google\.DS_Store => app\src\main\resources\com\google\.DS_Store
+* src\com\google\android\.DS_Store => app\src\main\resources\com\google\android\.DS_Store
+* src\com\google\android\apps\.DS_Store => app\src\main\resources\com\google\android\apps\.DS_Store
+* src\com\google\android\apps\watchme\.DS_Store => app\src\main\resources\com\google\android\apps\watchme\.DS_Store
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

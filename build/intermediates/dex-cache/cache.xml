@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\.android\build-cache\e0c88538c0ea2808b7a21ffa153d4ca0c11cf21c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="E:\Per\code\Personal\ytv\app\build\intermediates\pre-dexed\debug\classes_cef2c5fef82373fb364787c05f47bdf13565defd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c0c912d58c9468b1f9d9769c8975afdf2c85d681">
+        <dex dex="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-7.8.0_37be5fed1722ee79ddcd956e263ee37878e401a3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\.gradle\caches\modules-2\files-2.1\com.google.api-client\google-api-client-gson\1.22.0\ca557a4630f5d4690f008fe32231c7f41701c35d\google-api-client-gson-1.22.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ca557a4630f5d4690f008fe32231c7f41701c35d">
+        <dex dex="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\pre-dexed\debug\google-api-client-gson-1.22.0_a506e6bb15ae4da4c236c272b758ea713d3cdab2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Android\SDK\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="E:\Per\code\Personal\ytv\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_2c3867d1c40574635ca22d17fafb139f9a1e08b9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\.android\build-cache\2c4189b314ae8c6c57aeca4bbb5f1ae1788c377e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
+        <dex dex="E:\Per\code\Personal\ytv\app\build\intermediates\pre-dexed\debug\classes_ce37d2658da7e64ffd1cfeb09c24bb4239adcbb5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.0.0_6a502b61d5d2854f6b1da9fb8f0aaee65758be61.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\.android\build-cache\0aaa585786bb8b13f85e716a42b57fd2083e57ac\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c0c912d58c9468b1f9d9769c8975afdf2c85d681">
+        <dex dex="E:\Per\code\Personal\ytv\app\build\intermediates\pre-dexed\debug\classes_b0a0ef7f9e08255bc49c12c75fa1c3ce4bce13e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\.android\build-cache\84693f8fd1e27a7166eaf9bc27b440e3098e0f56\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
+        <dex dex="E:\Per\code\Personal\ytv\app\build\intermediates\pre-dexed\debug\classes_da7f65a5ebe630e2d48deebf90c06cbbaff0da31.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3\5fc52c41ef0239d1093a1eb7c3697036183677ce\gson-2.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce">
+        <dex dex="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\pre-dexed\debug\gson-2.3_8e0e3a77df46ef2d29e88112763dedae152a38e2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\.gradle\caches\modules-2\files-2.1\com.google.api-client\google-api-client-android\1.22.0\7a0fe12b7d8189a821934d6f9d6586d00180e461\google-api-client-android-1.22.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7a0fe12b7d8189a821934d6f9d6586d00180e461">
+        <dex dex="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\pre-dexed\debug\google-api-client-android-1.22.0_6d4d5edb62d78291d67db7103a17727dec8bcc46.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\1.3.9\40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf\jsr305-1.3.9.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf">
+        <dex dex="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\pre-dexed\debug\jsr305-1.3.9_42ed0e0584c413b7a93197bc77f16a8c91d03a93.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2491ae1b2a848af1f4f0c795f3117c1bd6a1989f">
+        <dex dex="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-plus-7.8.0_49dd10d504cf3d3dec4ddd88b8d2a7af40d2bbd1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\.gradle\caches\modules-2\files-2.1\com.google.oauth-client\google-oauth-client\1.22.0\1d63f369ac78e4838a3197147012026e791008cb\google-oauth-client-1.22.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1d63f369ac78e4838a3197147012026e791008cb">
+        <dex dex="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\pre-dexed\debug\google-oauth-client-1.22.0_75e380c34601c16b72d5a7fabf3e352c24fef048.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\.gradle\caches\modules-2\files-2.1\com.google.api-client\google-api-client\1.22.0\244350c0c845c583717ade13f5666a452fd0cfa\google-api-client-1.22.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0244350c0c845c583717ade13f5666a452fd0cfa">
+        <dex dex="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\pre-dexed\debug\google-api-client-1.22.0_e5a87f93b4a658979811ad2d68b27c4d27725a59.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\.gradle\caches\modules-2\files-2.1\com.google.guava\guava-jdk5\17.0\463f8378feba44df7ba7cd9272d01837dad62b36\guava-jdk5-17.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="463f8378feba44df7ba7cd9272d01837dad62b36">
+        <dex dex="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\pre-dexed\debug\guava-jdk5-17.0_6e5c63bc629c7c9e0667415885f7859d88d55026.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\.gradle\caches\modules-2\files-2.1\com.google.apis\google-api-services-youtube\v3-rev120-1.19.0\9befa937f06683ea4b038fc8667ec41f4480677f\google-api-services-youtube-v3-rev120-1.19.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9befa937f06683ea4b038fc8667ec41f4480677f">
+        <dex dex="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\pre-dexed\debug\google-api-services-youtube-v3-rev120-1.19.0_4c4ee442e9e5318f83ed3d09d1018d98e5eca07f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\.gradle\caches\modules-2\files-2.1\com.mcxiaoke.volley\library\1.0.18\38da306aafee11459cd935a01d2c92a98dc670a4\library-1.0.18.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="38da306aafee11459cd935a01d2c92a98dc670a4">
+        <dex dex="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\pre-dexed\debug\library-1.0.18_5883c9bc38105400298282f54d8f67b3c3d227c6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-android\1.22.0\6d1e1a76a16a244ab2f41775791be1dd0ec2878a\google-http-client-android-1.22.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6d1e1a76a16a244ab2f41775791be1dd0ec2878a">
+        <dex dex="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\pre-dexed\debug\google-http-client-android-1.22.0_e6c9dcc88ad3493f376d53c4f869ecd5e9d6bf8d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\exploded-aar\com.android.support\design\23.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8a5238e4bdcd6568b82db669d41817de670586b8">
+        <dex dex="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.0.0_87227e51f96fb3e55d6c0810ed6a6e87f3726b51.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Android\SDK\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.0_3b4b226ac9e490f617405716abfda053fcff2db6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
+        <dex dex="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.0.0_5ab9e188d48ad65688c35415b6135bc12c63205c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\.android\build-cache\cd507d79c78c2e157a5666025c3c7d7244a64285\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
+        <dex dex="E:\Per\code\Personal\ytv\app\build\intermediates\pre-dexed\debug\classes_24000ac2264f14111fa9639d811b039ef1d551ad.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client\1.22.0\d441fc58329c4a4c067acec04ac361627f66ecc8\google-http-client-1.22.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d441fc58329c4a4c067acec04ac361627f66ecc8">
+        <dex dex="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\pre-dexed\debug\google-http-client-1.22.0_bd6f28def99b317f309a00584b9be7686c50110f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-gson\1.22.0\826b874fa410a8135b7094c469951bf0dadb0c10\google-http-client-gson-1.22.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="826b874fa410a8135b7094c469951bf0dadb0c10">
+        <dex dex="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\pre-dexed\debug\google-http-client-gson-1.22.0_a72fe78db6f8577c9790fcbcfeac7f05c66c589f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-jackson2\1.22.0\cc014d64ae11117e159d334c99d9c246d9b36f44\google-http-client-jackson2-1.22.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cc014d64ae11117e159d334c99d9c246d9b36f44">
+        <dex dex="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\pre-dexed\debug\google-http-client-jackson2-1.22.0_b0de01f4ce09a70fc69c09ed24c08e8a04f3dd43.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\.android\build-cache\0746ed7ff48b42a4f8fdea038c7879ab43bf6f08\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2491ae1b2a848af1f4f0c795f3117c1bd6a1989f">
+        <dex dex="E:\Per\code\Personal\ytv\app\build\intermediates\pre-dexed\debug\classes_28e27a5989a7161de28dbabdde593d27c9dc10f2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\libs\internal_impl-23.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0_64cc5f612ce44edb28d4ad51d9201b64d8a3c276.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Per\code\Personal\ytv\library\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8c7d5d932aa4b48cacbc8905a8644a9a2978a68e">
+        <dex dex="E:\Per\code\Personal\ytv\app\build\intermediates\pre-dexed\debug\classes_33736f9265849ee0edfd31762b700d7269831b7d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rana\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.1.3\f6c3aed1cdfa21b5c1737c915186ea93a95a58bd\jackson-core-2.1.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f6c3aed1cdfa21b5c1737c915186ea93a95a58bd">
+        <dex dex="C:\Users\Rana\Downloads\Android-Youtube-LiveStream-master\MainActivity\app\build\intermediates\pre-dexed\debug\jackson-core-2.1.3_a735122f94f460c3f3610444ef0d7f668e4ec8b9.jar" />
+    </item>
+
+</items>

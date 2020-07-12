@@ -1,0 +1,175 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<!--
+3  Copyright 2014 Google, Inc
+4
+5  Licensed under the Apache License, Version 2.0 (the "License");
+6  you may not use this file except in compliance with the License.
+7  You may obtain a copy of the License at
+8
+9      http://www.apache.org/licenses/LICENSE-2.0
+10
+11  Unless required by applicable law or agreed to in writing, software
+12  distributed under the License is distributed on an "AS IS" BASIS,
+13  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+14  See the License for the specific language governing permissions and
+15  limitations under the License.
+16-->
+17<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+18    package="com.google.android.apps.watchme" >
+19
+20    <uses-sdk
+20-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:19:5-47
+21        android:minSdkVersion="23"
+21-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:19:5-47
+22        android:targetSdkVersion="28" />
+22-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:19:15-44
+23
+24    <uses-permission android:name="android.permission.INTERNET" />
+24-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:21:5-67
+24-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:21:22-64
+25    <!-- Access network state to check Google Play Services availability. -->
+26    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+26-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:23:5-79
+26-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:23:22-76
+27    <!-- For authorization. -->
+28    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+28-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:25:5-71
+28-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:25:22-68
+29    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+29-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:26:5-74
+29-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:26:22-71
+30    <uses-permission android:name="android.permission.NETWORK" />
+30-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:27:5-66
+30-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:27:22-63
+31    <uses-permission android:name="android.permission.READ_CONTACTS" />
+31-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:28:5-72
+31-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:28:22-69
+32    <uses-permission android:name="android.permission.SEND_SMS" />
+32-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:29:5-66
+32-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:29:22-64
+33    <!-- For recording audio and video without going to lock. -->
+34    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+34-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:31:5-71
+34-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:31:22-68
+35    <uses-permission android:name="android.permission.WAKE_LOCK" />
+35-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:32:5-68
+35-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:32:22-65
+36    <uses-permission android:name="android.permission.CAMERA" />
+36-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:33:5-65
+36-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:33:22-62
+37    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+37-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:34:5-79
+37-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:34:22-76
+38    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+38-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:35:5-81
+38-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:35:22-78
+39    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+39-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:36:5-80
+39-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:36:22-77
+40
+41    <uses-feature
+41-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:38:5-40:36
+42        android:name="android.hardware.camera"
+42-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:39:9-47
+43        android:required="false" />
+43-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:40:9-33
+44    <uses-feature
+44-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:41:5-43:36
+45        android:name="android.hardware.camera.front"
+45-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:42:9-53
+46        android:required="false" />
+46-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:43:9-33
+47    <uses-feature
+47-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:44:5-46:36
+48        android:name="android.hardware.camera.autofocus"
+48-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:45:9-57
+49        android:required="false" />
+49-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:46:9-33
+50    <uses-feature
+50-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:47:5-49:36
+51        android:name="android.hardware.telephony"
+51-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:48:9-50
+52        android:required="false" />
+52-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:49:9-33
+53
+54    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+54-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:51:5-75
+54-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:51:22-72
+55
+56    <application
+56-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:53:5-86:19
+57        android:allowBackup="true"
+57-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:54:9-35
+58        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+58-->[androidx.core:core:1.0.0] C:\Users\iancp\.gradle\caches\transforms-2\files-2.1\f88df7c86cbc989e82020e686162bad6\core-1.0.0\AndroidManifest.xml:22:18-86
+59        android:debuggable="true"
+60        android:extractNativeLibs="false"
+61        android:icon="@drawable/ic_launcher"
+61-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:55:9-45
+62        android:label="@string/app_name"
+62-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:56:9-41
+63        android:supportsRtl="true"
+63-->[:library] C:\Users\iancp\Downloads\ytv-master\ytv-master\library\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:9-35
+64        android:testOnly="true"
+65        android:theme="@style/AppTheme" >
+65-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:57:9-40
+66        <activity
+66-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:58:9-67:20
+67            android:name="com.google.android.apps.watchme.MainActivity"
+67-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:59:13-41
+68            android:configChanges="orientation|screenSize"
+68-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:60:13-59
+69            android:label="@string/app_name" >
+69-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:61:13-45
+70            <intent-filter>
+70-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:62:13-66:29
+71                <action android:name="android.intent.action.MAIN" />
+71-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:63:17-69
+71-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:63:25-66
+72
+73                <category android:name="android.intent.category.LAUNCHER" />
+73-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:65:17-77
+73-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:65:27-74
+74            </intent-filter>
+75        </activity>
+76        <activity
+76-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:68:9-71:53
+77            android:name="com.google.android.apps.watchme.StreamerActivity"
+77-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:69:13-45
+78            android:label="@string/app_name"
+78-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:70:13-45
+79            android:screenOrientation="landscape" />
+79-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:71:13-50
+80
+81        <service android:name="com.google.android.apps.watchme.StreamerService" />
+81-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:73:9-52
+81-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:73:18-49
+82
+83        <activity
+83-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:75:9-78:61
+84            android:name="com.google.android.apps.watchme.YouTubeStreamActivity"
+84-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:76:13-50
+85            android:label="@string/app_name"
+85-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:77:13-45
+86            android:screenOrientation="portrait" />
+86-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:78:13-49
+87        <activity android:name="com.google.android.apps.watchme.ContactList" >
+87-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:79:9-85:20
+87-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:80:13-40
+88            <meta-data
+88-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:81:13-84:19
+89                android:name="android.support.PARENT_ACTIVITY"
+89-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:82:17-63
+90                android:value=".MainActivity" />
+90-->C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:83:17-46
+91        </activity>
+92
+93        <meta-data
+93-->[com.google.android.gms:play-services-base:7.8.0] C:\Users\iancp\.gradle\caches\transforms-2\files-2.1\12a51a2d4bda57709e81362ab73379f4\jetified-play-services-base-7.8.0\AndroidManifest.xml:21:9-23:69
+94            android:name="com.google.android.gms.version"
+94-->[com.google.android.gms:play-services-base:7.8.0] C:\Users\iancp\.gradle\caches\transforms-2\files-2.1\12a51a2d4bda57709e81362ab73379f4\jetified-play-services-base-7.8.0\AndroidManifest.xml:22:13-58
+95            android:value="@integer/google_play_services_version" />
+95-->[com.google.android.gms:play-services-base:7.8.0] C:\Users\iancp\.gradle\caches\transforms-2\files-2.1\12a51a2d4bda57709e81362ab73379f4\jetified-play-services-base-7.8.0\AndroidManifest.xml:23:13-66
+96    </application>
+97
+98</manifest>
