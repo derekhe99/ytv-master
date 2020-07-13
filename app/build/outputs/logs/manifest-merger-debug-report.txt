@@ -1,7 +1,7 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:16:1-88:12
-INJECTED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:16:1-88:12
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:16:1-90:12
+INJECTED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:16:1-90:12
 MERGED from [com.google.android.gms:play-services-plus:7.8.0] C:\Users\iancp\.gradle\caches\transforms-2\files-2.1\2527ec3a6c33c8fd0acedd23ea6596ae\play-services-plus-7.8.0\AndroidManifest.xml:16:1-20:12
 MERGED from [com.google.android.gms:play-services-base:7.8.0] C:\Users\iancp\.gradle\caches\transforms-2\files-2.1\12a51a2d4bda57709e81362ab73379f4\jetified-play-services-base-7.8.0\AndroidManifest.xml:16:1-26:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\iancp\.gradle\caches\transforms-2\files-2.1\2fb8103c62e3ee1e6e4cc337dd696441\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -39,7 +39,7 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\iancp\.gradl
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\iancp\.gradle\caches\transforms-2\files-2.1\ed8cc0ac00b11c0234ef1e5a578c70c1\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\iancp\.gradle\caches\transforms-2\files-2.1\df4d09f70e3f533a2fede8f96085147c\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\iancp\.gradle\caches\transforms-2\files-2.1\c16c855844b564ee7204d4d6005470fb\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:16:1-88:12
+INJECTED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:16:1-90:12
 	package
 		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:17:5-46
 		INJECTED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml
@@ -162,60 +162,64 @@ uses-permission#android.permission.SEND_SMS
 ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:29:5-66
 	android:name
 		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:29:22-64
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:30:5-31:60
+	android:name
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:31:9-57
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:31:5-71
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:33:5-71
 	android:name
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:31:22-68
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:33:22-68
 uses-permission#android.permission.WAKE_LOCK
-ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:32:5-68
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:34:5-68
 	android:name
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:32:22-65
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:34:22-65
 uses-permission#android.permission.CAMERA
-ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:33:5-65
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:35:5-65
 	android:name
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:33:22-62
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:35:22-62
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:34:5-79
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:36:5-79
 	android:name
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:34:22-76
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:36:22-76
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:35:5-81
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:37:5-81
 	android:name
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:35:22-78
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:37:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:36:5-80
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:38:5-80
 	android:name
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:36:22-77
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:38:22-77
 uses-feature#android.hardware.camera
-ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:38:5-40:36
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:40:5-42:36
 	android:required
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:40:9-33
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:42:9-33
 	android:name
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:39:9-47
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:41:9-47
 uses-feature#android.hardware.camera.front
-ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:41:5-43:36
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:43:5-45:36
 	android:required
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:43:9-33
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:45:9-33
 	android:name
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:42:9-53
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:44:9-53
 uses-feature#android.hardware.camera.autofocus
-ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:44:5-46:36
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:46:5-48:36
 	android:required
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:46:9-33
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:48:9-33
 	android:name
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:45:9-57
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:47:9-57
 uses-feature#android.hardware.telephony
-ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:47:5-49:36
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:49:5-51:36
 	android:required
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:49:9-33
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:51:9-33
 	android:name
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:48:9-50
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:50:9-50
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:51:5-75
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:53:5-75
 	android:name
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:51:22-72
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:53:22-72
 application
-ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:53:5-86:19
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:55:5-88:19
 MERGED from [com.google.android.gms:play-services-plus:7.8.0] C:\Users\iancp\.gradle\caches\transforms-2\files-2.1\2527ec3a6c33c8fd0acedd23ea6596ae\play-services-plus-7.8.0\AndroidManifest.xml:19:5-20
 MERGED from [com.google.android.gms:play-services-plus:7.8.0] C:\Users\iancp\.gradle\caches\transforms-2\files-2.1\2527ec3a6c33c8fd0acedd23ea6596ae\play-services-plus-7.8.0\AndroidManifest.xml:19:5-20
 MERGED from [com.google.android.gms:play-services-base:7.8.0] C:\Users\iancp\.gradle\caches\transforms-2\files-2.1\12a51a2d4bda57709e81362ab73379f4\jetified-play-services-base-7.8.0\AndroidManifest.xml:20:5-24:19
@@ -235,61 +239,61 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\ia
 	android:supportsRtl
 		ADDED from [:library] C:\Users\iancp\Downloads\ytv-master\ytv-master\library\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:9-35
 	android:label
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:56:9-41
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:58:9-41
 	android:icon
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:55:9-45
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:57:9-45
 	android:allowBackup
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:54:9-35
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:56:9-35
 	android:theme
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:57:9-40
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:59:9-40
 activity#com.google.android.apps.watchme.MainActivity
-ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:58:9-67:20
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:60:9-69:20
 	android:label
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:61:13-45
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:63:13-45
 	android:configChanges
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:60:13-59
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:62:13-59
 	android:name
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:59:13-41
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:61:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:62:13-66:29
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:64:13-68:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:63:17-69
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:65:17-69
 	android:name
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:63:25-66
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:65:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:65:17-77
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:67:17-77
 	android:name
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:65:27-74
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:67:27-74
 activity#com.google.android.apps.watchme.StreamerActivity
-ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:68:9-71:53
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:70:9-73:53
 	android:screenOrientation
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:71:13-50
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:73:13-50
 	android:label
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:70:13-45
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:72:13-45
 	android:name
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:69:13-45
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:71:13-45
 service#com.google.android.apps.watchme.StreamerService
-ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:73:9-52
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:75:9-52
 	android:name
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:73:18-49
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:75:18-49
 activity#com.google.android.apps.watchme.YouTubeStreamActivity
-ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:75:9-78:61
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:77:9-80:61
 	android:screenOrientation
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:78:13-49
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:80:13-49
 	android:label
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:77:13-45
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:79:13-45
 	android:name
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:76:13-50
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:78:13-50
 activity#com.google.android.apps.watchme.ContactList
-ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:79:9-85:20
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:81:9-87:20
 	android:name
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:80:13-40
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:82:13-40
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:81:13-84:19
+ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:83:13-86:19
 	android:value
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:83:17-46
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:85:17-46
 	android:name
-		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:82:17-63
+		ADDED from C:\Users\iancp\Downloads\ytv-master\ytv-master\app\src\main\AndroidManifest.xml:84:17-63
 meta-data#com.google.android.gms.version
 ADDED from [com.google.android.gms:play-services-base:7.8.0] C:\Users\iancp\.gradle\caches\transforms-2\files-2.1\12a51a2d4bda57709e81362ab73379f4\jetified-play-services-base-7.8.0\AndroidManifest.xml:21:9-23:69
 	android:value

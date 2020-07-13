@@ -23,20 +23,30 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.provider.Settings;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.google.android.apps.watchme.util.EventData;
@@ -54,9 +64,11 @@ import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.services.youtube.YouTube;
 
 import java.io.IOException;
+import java.lang.ref.WeakReference;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * @author Ibrahim Ulukaya <ulukaya@google.com>
@@ -64,7 +76,7 @@ import java.util.List;
  *         Main activity class which handles authorization and intents.
  */
 public class MainActivity extends Activity implements
-        EventsListFragment.Callbacks, SharedPreferences.OnSharedPreferenceChangeListener{
+        EventsListFragment.Callbacks, SharedPreferences.OnSharedPreferenceChangeListener {
     public static final String ACCOUNT_KEY = "accountName";
     public static final String APP_NAME = "watch";
     private static final int REQUEST_GOOGLE_PLAY_SERVICES = 0;
@@ -72,6 +84,7 @@ public class MainActivity extends Activity implements
     private static final int REQUEST_ACCOUNT_PICKER = 2;
     private static final int REQUEST_AUTHORIZATION = 3;
     private static final int REQUEST_STREAMER = 4;
+    private static final int CODE_WRITE_SETTINGS_PERMISSION = 5;
     final HttpTransport transport = AndroidHttp.newCompatibleTransport();
     final JsonFactory jsonFactory = new GsonFactory();
     GoogleAccountCredential credential;
@@ -81,9 +94,14 @@ public class MainActivity extends Activity implements
     String[] PERMISSIONS = {Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO,
             Manifest.permission.GET_ACCOUNTS, Manifest.permission.ACCESS_NETWORK_STATE,
             Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            Manifest.permission.SEND_SMS, Manifest.permission.ACCESS_FINE_LOCATION};
+            Manifest.permission.SEND_SMS, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION,
+            Manifest.permission.WRITE_SETTINGS};
     int PERMISSION_ALL = 1;
-    String phoneNumber;
+
+    LocationManager locationManager;
+    private String longi = "";
+    private String lati = "";
+    private String coords = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,7 +141,12 @@ public class MainActivity extends Activity implements
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         if (key.equals("select_contact")) {
-            phoneNumber = sharedPreferences.getString("select_contact", "DEFAULT");
+            Log.e("Contact---", "Sending to " + sharedPreferences.getString("select_contact", "DEFAULT"));
+        }
+        if (key.equals("enable_dim")){
+            if (sharedPreferences.getBoolean("enable_dim", false)){
+                youDesirePermissionCode(this);
+            }
         }
 
     }
@@ -171,7 +194,7 @@ public class MainActivity extends Activity implements
     }
 
     public void createEvent(View view) {
-        new CreateLiveEventTask().execute();
+        new CreateLiveEventTask(this).execute();
     }
 
     private void ensureLoader() {
@@ -234,6 +257,26 @@ public class MainActivity extends Activity implements
         return super.onOptionsItemSelected(item);
     }
 
+    public void youDesirePermissionCode(Activity context){
+        boolean permission;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            permission = Settings.System.canWrite(context);
+        } else {
+            permission = ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_SETTINGS) == PackageManager.PERMISSION_GRANTED;
+        }
+        if (permission) {
+
+        }  else {
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+                Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS);
+                intent.setData(Uri.parse("package:" + context.getPackageName()));
+                context.startActivityForResult(intent, MainActivity.CODE_WRITE_SETTINGS_PERMISSION);
+            } else {
+                ActivityCompat.requestPermissions(context, new String[]{Manifest.permission.WRITE_SETTINGS}, MainActivity.CODE_WRITE_SETTINGS_PERMISSION);
+            }
+        }
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -273,7 +316,13 @@ public class MainActivity extends Activity implements
                     }
                 }
                 break;
-
+            case CODE_WRITE_SETTINGS_PERMISSION:
+                if(Settings.System.canWrite(this))
+                {
+                Log.d("TAG", "MainActivity.CODE_WRITE_SETTINGS_PERMISSION success");
+                //do your code
+                }
+                break;
         }
     }
 
@@ -347,6 +396,32 @@ public class MainActivity extends Activity implements
         startStreaming(liveBroadcast);
     }
 
+    public Location getLocation() {
+        if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return null;
+        }
+        LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+        if (locationManager != null) {
+            Location lastKnownLocationGPS = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            if (lastKnownLocationGPS != null) {
+                return lastKnownLocationGPS;
+            } else {
+                Location loc =  locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
+                System.out.println("1::"+loc);
+                System.out.println("2::"+loc.getLatitude());
+                return loc;
+            }
+        } else {
+            return null;
+        }
+    }
+
+
+    public void CheckPermission() {
+
+    }
+
+
     private class GetLiveEventsTask extends
             AsyncTask<Void, Void, List<EventData>> {
         private ProgressDialog progressDialog;
@@ -390,6 +465,12 @@ public class MainActivity extends Activity implements
             AsyncTask<Void, Void, List<EventData>> {
         private ProgressDialog progressDialog;
 
+        private WeakReference<Context> contextRef;
+
+        public CreateLiveEventTask(Context context) {
+            contextRef = new WeakReference<>(context);
+        }
+
         @Override
         protected void onPreExecute() {
             progressDialog = ProgressDialog.show(MainActivity.this, null,
@@ -425,12 +506,69 @@ public class MainActivity extends Activity implements
             buttonCreateEvent.setEnabled(true);
 
             Log.e(MainActivity.APP_NAME, fetchedEvents.get(fetchedEvents.size()-1).getIngestionAddress());
+            Log.e(MainActivity.APP_NAME, fetchedEvents.get(fetchedEvents.size()-1).getWatchUri());
+
+            String watchUrl = fetchedEvents.get(fetchedEvents.size()-1).getWatchUri();
             startStreaming(fetchedEvents.get(fetchedEvents.size()-1));
 
-            if (phoneNumber != "1"){
+            Context context = contextRef.get();
+
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+
+            boolean dim = preferences.getBoolean("enable_dim", false);
+
+            Log.e("Dim--", String.valueOf(dim));
+
+            if (dim == true){
+                Settings.System.putInt(context.getContentResolver(),
+                        Settings.System.SCREEN_BRIGHTNESS, 0);
+            }
+
+            Location place = getLocation();
+            double latitude = place.getLatitude();
+            double longitude = place.getLongitude();
+
+            Geocoder geocoder;
+            List<Address> addresses;
+            geocoder = new Geocoder(context, Locale.getDefault());
+            String strAdd = null;
+
+            try {
+                addresses = geocoder.getFromLocation(latitude, longitude, 1);
+
+                if (addresses != null) {
+                    Address returnedAddress = addresses.get(0);
+                    StringBuilder strReturnedAddress = new StringBuilder("");
+
+                    strReturnedAddress.append(addresses.get(0).getAddressLine(0));
+
+                    strAdd = strReturnedAddress.toString();
+                    Log.e("Address---", strReturnedAddress.toString());
+                } else {
+                    Log.e("Address---", "No Address returned!");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                Log.e("Address--", "Can't get Address!");
+            }
+
+            Log.e("SENDING", "Sending Message RIGHT NOW from " + String.valueOf(latitude) + " " + String.valueOf(longitude));
+
+            if (strAdd != null){
+                Log.e("SENDING", "Sending Message RIGHT NOW from " + strAdd);
+            }
+
+            Log.e("SENDING", "Sending Message RIGHT NOW to " + preferences.getString("select_contact", "DEFAULT"));
+            String phone = preferences.getString("select_contact", "DEFAULT");
+
+            if (phone != null && strAdd != null){
                 SmsManager smgr = SmsManager.getDefault();
-                Log.e("SENDING", "Sending Message RIGHT NOW to " + phoneNumber);
-                smgr.sendTextMessage(phoneNumber,null, "your friend has been pulled over!",null,null);
+                Log.e("SENDING", "Sending Message RIGHT NOW to " + phone + " from " + strAdd);
+                smgr.sendTextMessage(phone,null, "I have been pulled over at " + strAdd + ". Watch live at " + watchUrl,null,null);
+            } else if (phone != null){
+                SmsManager smgr = SmsManager.getDefault();
+                Log.e("SENDING", "Sending Message RIGHT NOW to " + phone);
+                smgr.sendTextMessage(phone,null, "I have been pulled over. Watch live at " + watchUrl ,null,null);
             }
 
             progressDialog.dismiss();

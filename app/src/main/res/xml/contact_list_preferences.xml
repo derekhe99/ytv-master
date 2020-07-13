@@ -2,11 +2,15 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width = "match_parent"
     android:layout_height = "match_parent">
-    <com.google.android.apps.watchme.util.ContactListPreference
+    <ListPreference
         android:key="select_contact"
         android:title="Select Emergency Contact"
         android:summary="This person will receive an automatic text with your live stream and location"
         android:entries="@array/listArray"
         android:entryValues="@array/listValues"
         android:defaultValue="1"/>
+    <CheckBoxPreference
+        android:key="enable_dim"
+        android:title="Enable Screen Dimming"
+        android:summary="Screen will be dimmed when this is checked."/>
 </PreferenceScreen>

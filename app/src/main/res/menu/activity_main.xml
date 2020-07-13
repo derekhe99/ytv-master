@@ -26,5 +26,5 @@
     <item
         android:id="@+id/emergency_contacts"
         android:icon="@drawable/ic_mailboxes_accounts"
-        android:title="Emergency Contacts"/>
+        android:title="Settings"/>
 </menu>
