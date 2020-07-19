@@ -20,10 +20,6 @@
         android:icon="@drawable/ic_mailboxes_accounts"
         android:title="@string/accounts" />
     <item
-        android:id="@+id/menu_refresh"
-        android:icon="@drawable/ic_menu_refresh"
-        android:title="@string/refresh" />
-    <item
         android:id="@+id/emergency_contacts"
         android:icon="@drawable/ic_mailboxes_accounts"
         android:title="Settings"/>

@@ -31,7 +31,7 @@ import java.io.IOException;
 import java.net.SocketException;
 import java.util.Random;
 
-public class YouTubeStreamActivity extends Activity implements RtmpHandler.RtmpListener,
+public class YouTubeStreamActivity extends AppCompatActivity implements RtmpHandler.RtmpListener,
         SrsRecordHandler.SrsRecordListener, SrsEncodeHandler.SrsEncodeListener {
 
     private static final String TAG = "Yasea";
@@ -63,10 +63,6 @@ public class YouTubeStreamActivity extends Activity implements RtmpHandler.RtmpL
         // restore data.
         sp = getSharedPreferences("Yasea", MODE_PRIVATE);
         //rtmpUrl = sp.getString("rtmpUrl", rtmpUrl);
-
-        // initialize url.
-        final EditText efu = (EditText) findViewById(R.id.url);
-        efu.setText(rtmpUrl);
 
         btnPublish = (Button) findViewById(R.id.publish);
         btnSwitchCamera = (Button) findViewById(R.id.swCam);
@@ -117,6 +113,8 @@ public class YouTubeStreamActivity extends Activity implements RtmpHandler.RtmpL
             }
         });
 
+
+
         btnRecord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -134,6 +132,9 @@ public class YouTubeStreamActivity extends Activity implements RtmpHandler.RtmpL
             }
         });
 
+
+
+
         btnSwitchEncoder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -149,15 +150,21 @@ public class YouTubeStreamActivity extends Activity implements RtmpHandler.RtmpL
 
         btnPublish.performClick();
 
+        //mPublisher.startRecord(recPath);
+
 
     }
 
+
+    /*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -223,6 +230,11 @@ public class YouTubeStreamActivity extends Activity implements RtmpHandler.RtmpL
 
         return super.onOptionsItemSelected(item);
     }
+
+     */
+
+
+
     public void endEvent() {
         Intent data = new Intent();
         data.putExtra(YouTubeApi.BROADCAST_ID_KEY, broadcastId);

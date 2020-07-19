@@ -115,7 +115,7 @@ public class ContactListFragment extends PreferenceFragment {
         String phoneNo2 = "";
         ContentResolver cr = getContext().getContentResolver();
         Cursor cur = cr.query(ContactsContract.Contacts.CONTENT_URI,
-                null, null, null, null);
+                null, null, null, "upper("+ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + ") ASC");
         if ((cur != null ? cur.getCount() : 0) > 0) {
             while (cur != null && cur.moveToNext()) {
                 String id = cur.getString(
@@ -127,7 +127,7 @@ public class ContactListFragment extends PreferenceFragment {
                             ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
                             null,
                             ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?",
-                            new String[]{id}, null);
+                            new String[]{id}, "upper("+ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + ") ASC");
                     while (pCur.moveToNext()) {
                         phoneNo = pCur.getString(pCur.getColumnIndex(
                                 ContactsContract.CommonDataKinds.Phone.NUMBER));

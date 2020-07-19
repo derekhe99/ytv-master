@@ -23,6 +23,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.Icon;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -34,6 +35,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -41,12 +43,16 @@ import android.provider.Settings;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.google.android.apps.watchme.util.EventData;
@@ -54,6 +60,8 @@ import com.google.android.apps.watchme.util.NetworkSingleton;
 import com.google.android.apps.watchme.util.Utils;
 import com.google.android.apps.watchme.util.YouTubeApi;
 import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
 import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException;
@@ -70,13 +78,15 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import static android.view.View.NO_ID;
+
 /**
  * @author Ibrahim Ulukaya <ulukaya@google.com>
  *         <p/>
  *         Main activity class which handles authorization and intents.
  */
-public class MainActivity extends Activity implements
-        EventsListFragment.Callbacks, SharedPreferences.OnSharedPreferenceChangeListener {
+public class MainActivity extends AppCompatActivity implements
+        SharedPreferences.OnSharedPreferenceChangeListener {
     public static final String ACCOUNT_KEY = "accountName";
     public static final String APP_NAME = "watch";
     private static final int REQUEST_GOOGLE_PLAY_SERVICES = 0;
@@ -90,7 +100,6 @@ public class MainActivity extends Activity implements
     GoogleAccountCredential credential;
     private String mChosenAccountName;
     private ImageLoader mImageLoader;
-    private EventsListFragment mEventsListFragment;
     String[] PERMISSIONS = {Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO,
             Manifest.permission.GET_ACCOUNTS, Manifest.permission.ACCESS_NETWORK_STATE,
             Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE,
@@ -103,13 +112,64 @@ public class MainActivity extends Activity implements
     private String lati = "";
     private String coords = "";
 
+    private ListView mListView;
+    private TextView mTextView;
+    private MaterialButtonToggleGroup mToggleGroup;
+
+    Button button1;
+    Button button2;
+    Button button3;
+
+    String[] maintitle ={
+            "Allow Permissions","Sign Into Google",
+            "Enable Youtube Live Streaming","Select Emergency Contacts",
+            "Test Run"
+    };
+
+    String[] subtitle ={
+            "Allow permissions on installation, or go to your Settings app to allow them",
+            "Choose your Google Account on installation, or change using the Accounts tab at the top-right",
+            "Enable live streaming in your chosen account from the website or app (there will be a 24 hour delay to confirm)",
+            "Select Two Emergency Contacts to notify when you're stopped",
+            "Press the button to conduct a test run to ensure the whole process works for you and your contacts"
+    };
+
+    String[] maintitle2 ={
+            "Right to Remain Silent","You do NOT have to consent to a Search",
+            "You can ask if you're free to leave","You do NOT have to answer questions on your origin",
+            "You have the right to a government-appointed lawyer"
+    };
+
+    String[] subtitle2 ={
+            "Both driver and passengers have the right to remain silent. If you intend to exercise this right, say so outloud.",
+            "Officers may not search your vehicle without consent, but they may pat you down if suspecting a weapon. Note: an officer may illegally force a search, in which case, clearly document your objection for later legal purposes",
+            "If you're a passenger, you may ask if you're free to leave. If the answer is yes, silently leave.",
+            "This applies to questions about where you were born, whether you are a U.S. citizen, or how you entered the country",
+            "If you cannot afford a lawyer, you can legally be provided one"
+    };
+
+    String[] maintitle3 ={
+            "Pull Over in a safe place",
+            "Car off, Window Half-way Open, Hands on the Wheel",
+            "Have license, registration, proof of insurance ready",
+            "Stay Calm",
+            "Avoid Sudden Movements"
+    };
+
+    String[] subtitle3 ={
+            "Do so as quickly as possible",
+            "If you're in the passenger seat, hands on the dashboard",
+            "Only procure when asked",
+            "Don't take anything the officer says personally, even if provoked",
+            "Notify the officer whenever you reach for something"
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().requestFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ensureLoader();
         if (!hasPermissions(this, PERMISSIONS)) {
             ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
         }
@@ -127,10 +187,46 @@ public class MainActivity extends Activity implements
 
         credential.setSelectedAccountName(mChosenAccountName);
 
-        mEventsListFragment = (EventsListFragment) getFragmentManager()
-                .findFragmentById(R.id.list_fragment);
+        if (mChosenAccountName == null){
+            chooseAccount();
+        }
 
         setupSharedPreferences();
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.newic_launcher);
+
+        mTextView = findViewById(R.id.text_view);
+
+        mTextView.setText("Start Guide");
+
+        mListView = findViewById(R.id.list_view);
+
+        MyListAdapter adapter = new MyListAdapter(this, maintitle, subtitle);
+        mListView.setAdapter(adapter);
+
+        button1 = findViewById(R.id.button1);
+        button2 = findViewById(R.id.button2);
+        button3 = findViewById(R.id.button3);
+    }
+
+    public void button1(View view){
+        mTextView.setText("Start Guide");
+        MyListAdapter adapter = new MyListAdapter(this, maintitle, subtitle);
+        mListView.setAdapter(adapter);
+    }
+
+    public void button2(View view){
+        mTextView.setText("Know Your Rights");
+        mTextView.setTextSize(40);
+        MyListAdapter adapter = new MyListAdapter(this, maintitle2, subtitle2);
+        mListView.setAdapter(adapter);
+    }
+
+    public void button3(View view){
+        mTextView.setText("Pulled Over?");
+        MyListAdapter adapter = new MyListAdapter(this, maintitle3, subtitle3);
+        mListView.setAdapter(adapter);
     }
 
     private void setupSharedPreferences() {
@@ -197,12 +293,6 @@ public class MainActivity extends Activity implements
         new CreateLiveEventTask(this).execute();
     }
 
-    private void ensureLoader() {
-        if (mImageLoader == null) {
-            // Get the ImageLoader through your singleton class.
-            mImageLoader = NetworkSingleton.getInstance(this).getImageLoader();
-        }
-    }
 
     private void loadAccount() {
         SharedPreferences sp = PreferenceManager
@@ -236,17 +326,23 @@ public class MainActivity extends Activity implements
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
         super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return super.onCreateOptionsMenu(menu);
+
+
+
+        /*
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.activity_main, menu);
+        return true;
+         */
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_refresh:
-                loadData();
-                break;
             case R.id.menu_accounts:
                 chooseAccount();
                 return true;
@@ -337,11 +433,6 @@ public class MainActivity extends Activity implements
         super.onResume();
     }
 
-    @Override
-    public void onConnected(String connectedAccountName) {
-        // Make API requests only when the user has successfully signed in.
-        loadData();
-    }
 
     public void showGooglePlayServicesAvailabilityErrorDialog(
             final int connectionStatusCode) {
@@ -385,16 +476,6 @@ public class MainActivity extends Activity implements
     public void onBackPressed() {
     }
 
-    @Override
-    public ImageLoader onGetImageLoader() {
-        ensureLoader();
-        return mImageLoader;
-    }
-
-    @Override
-    public void onEventSelected(EventData liveBroadcast) {
-        startStreaming(liveBroadcast);
-    }
 
     public Location getLocation() {
         if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -456,7 +537,7 @@ public class MainActivity extends Activity implements
                 return;
             }
 
-            mEventsListFragment.setEvents(fetchedEvents);
+            //mEventsListFragment.setEvents(fetchedEvents);
             progressDialog.dismiss();
         }
     }

@@ -15,45 +15,101 @@
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:divider="?android:dividerHorizontal"
     android:horizontalSpacing="10dp"
     android:orientation="vertical"
-    android:showDividers="middle"
     android:verticalSpacing="10dp">
 
-    <fragment
-        android:id="@+id/list_fragment"
-        android:name="com.google.android.apps.watchme.EventsListFragment"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        tools:layout="@layout/list_fragment" />
+        android:layout_height="wrap_content">
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggleGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            app:singleSelection="true"
+            app:selectionRequired="true"
+            app:checkedButton="@+id/button1">
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start Guide"
+                style="?attr/materialButtonOutlinedStyle"
+                android:onClick="button1"
+                />
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rights"
+                android:onClick="button2"
+                style="?attr/materialButtonOutlinedStyle"
+                />
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pulled Over?"
+                android:onClick="button3"
+                style="?attr/materialButtonOutlinedStyle"
+                />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+    </RelativeLayout>
 
-    <LinearLayout
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#eee"
-        android:divider="?android:dividerVertical"
-        android:showDividers="middle">
+        android:layout_height="wrap_content">
 
-        <Button
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="roboto"
+                android:textStyle="bold"
+                android:paddingHorizontal="16dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="48sp" />
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/list_view"
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                android:paddingBottom="60dp"
+                android:clipToPadding="false">
+            </ListView>
+        </LinearLayout>
+
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/create_button"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            app:icon="@drawable/ic_device_access_video"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/ic_device_access_video"
-            android:ellipsize="end"
-            android:fontFamily="sans-serif-condensed"
             android:hint="@string/button_create"
             android:maxLines="2"
             android:onClick="createEvent"
-            android:padding="8dp"
-            android:textAppearance="?android:textAppearanceLarge"
-            android:textColorHint="#c00"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:backgroundTint="@color/colorPrimary"
+            android:textAppearance="?android:textAppearanceButton"
+            android:textColorHint="@color/white"
+            app:shapeAppearance="@style/Rounded"/>
+    </RelativeLayout>
 
 </LinearLayout>
