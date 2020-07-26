@@ -18,9 +18,15 @@ import android.Manifest;
 import android.accounts.AccountManager;
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Icon;
@@ -37,6 +43,8 @@ import android.preference.PreferenceManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 
 import android.provider.Settings;
@@ -73,10 +81,12 @@ import com.google.api.services.youtube.YouTube;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Set;
 
 import static android.view.View.NO_ID;
 
@@ -104,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements
             Manifest.permission.GET_ACCOUNTS, Manifest.permission.ACCESS_NETWORK_STATE,
             Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.SEND_SMS, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION,
-            Manifest.permission.WRITE_SETTINGS};
+            Manifest.permission.WRITE_SETTINGS, Manifest.permission.SYSTEM_ALERT_WINDOW};
     int PERMISSION_ALL = 1;
 
     LocationManager locationManager;
@@ -208,6 +218,47 @@ public class MainActivity extends AppCompatActivity implements
         button1 = findViewById(R.id.button1);
         button2 = findViewById(R.id.button2);
         button3 = findViewById(R.id.button3);
+
+        addNotification();
+    }
+
+    private void addNotification() {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("n", "n", NotificationManager.IMPORTANCE_HIGH);
+            channel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        NotificationCompat.Builder builder =
+                new NotificationCompat.Builder(this, "n")
+                        .setSmallIcon(R.drawable.newic_launcher_foreground) //set icon for notification
+                        .setContentTitle("Pulled Over is running") //set title of notification
+                        .setContentText("Click here to access quickly")//this is notification message
+                        .setAutoCancel(false)
+                        .setOngoing(true)// makes auto cancel of notification
+                        .setPriority(NotificationCompat.PRIORITY_MAX); //set priority of notification
+
+
+        Intent notificationIntent = new Intent(this, MainActivity.class);
+        Log.e("Noti--", "Notification");
+        notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        //notification message will get at NotificationView
+        notificationIntent.putExtra("message", "This is a notification message");
+
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+        builder.setContentIntent(pendingIntent);
+
+
+        // Add as notification
+        NotificationManagerCompat manager = NotificationManagerCompat.from(this);
+        manager.notify(999, builder.build());
+
+
     }
 
     public void button1(View view){
@@ -237,7 +288,11 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         if (key.equals("select_contact")) {
-            Log.e("Contact---", "Sending to " + sharedPreferences.getString("select_contact", "DEFAULT"));
+            Set<String> selections = sharedPreferences.getStringSet("select_contact", null);
+            String[] selected = selections.toArray(new String[] {});
+            for (int i = 0; i < selected.length; i++){
+                Log.e("Contact---", "Sending to " + selected[i]);
+            }
         }
         if (key.equals("enable_dim")){
             if (sharedPreferences.getBoolean("enable_dim", false)){
@@ -314,7 +369,7 @@ public class MainActivity extends AppCompatActivity implements
         getLiveEvents();
     }
 
-    private void openContacts(){
+    private void openSettings(){
         Intent myIntent = new Intent(this, ContactList.class);
         startActivityForResult(myIntent, 0);
     }
@@ -346,8 +401,8 @@ public class MainActivity extends AppCompatActivity implements
             case R.id.menu_accounts:
                 chooseAccount();
                 return true;
-            case R.id.emergency_contacts:
-                openContacts();
+            case R.id.settings:
+                openSettings();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -639,21 +694,112 @@ public class MainActivity extends AppCompatActivity implements
                 Log.e("SENDING", "Sending Message RIGHT NOW from " + strAdd);
             }
 
-            Log.e("SENDING", "Sending Message RIGHT NOW to " + preferences.getString("select_contact", "DEFAULT"));
-            String phone = preferences.getString("select_contact", "DEFAULT");
+            Set<String> selections = preferences.getStringSet("select_contact", null);
+            String[] selected = selections.toArray(new String[] {});
 
-            if (phone != null && strAdd != null){
-                SmsManager smgr = SmsManager.getDefault();
-                Log.e("SENDING", "Sending Message RIGHT NOW to " + phone + " from " + strAdd);
-                smgr.sendTextMessage(phone,null, "I have been pulled over at " + strAdd + ". Watch live at " + watchUrl,null,null);
-            } else if (phone != null){
-                SmsManager smgr = SmsManager.getDefault();
-                Log.e("SENDING", "Sending Message RIGHT NOW to " + phone);
-                smgr.sendTextMessage(phone,null, "I have been pulled over. Watch live at " + watchUrl ,null,null);
+            String custom = preferences.getString("custom_text", "DEFAULT");
+
+            if (selected != null && strAdd != null){
+                String message = "I have been pulled over at " + strAdd + ". \nWatch live at " + watchUrl + "\n";
+                ArrayList<String> parts = new ArrayList<>();
+                parts.add(message);
+                parts.add(custom);
+                for (int i = 0; i < selected.length; i++){
+                    Log.e("SENDING", "Sending Message RIGHT NOW to " + selected[i] + " from " + strAdd);
+                    Log.e("CUSTOM", custom);
+                    sendSMS(selected[i], parts);
+                }
+            } else if (selected != null){
+                String message = "I have been pulled over. \nWatch live at " + watchUrl + "\n";
+                ArrayList<String> parts = new ArrayList<>();
+                parts.add(message);
+                parts.add(custom);
+                for (int i = 0; i < selected.length; i++){
+                    Log.e("SENDING", "Sending Message RIGHT NOW to " + selected[i]);
+                    Log.e("CUSTOM", custom);
+                    sendSMS(selected[i], parts);
+                }
             }
 
             progressDialog.dismiss();
         }
+    }
+
+    private void sendSMS(String phoneNumber, ArrayList<String> message)
+    {
+        String SENT = "SMS_SENT";
+        String DELIVERED = "SMS_DELIVERED";
+
+        ArrayList<PendingIntent> deliveryIntents = new ArrayList<PendingIntent>(2);
+        ArrayList<PendingIntent> sentIntents = new ArrayList<PendingIntent>(2);
+
+        sentIntents.add(PendingIntent.getBroadcast(this, 0,
+                new Intent(SENT), 0));
+        sentIntents.add(PendingIntent.getBroadcast(this, 0,
+                new Intent(SENT), 0));
+
+        deliveryIntents.add(PendingIntent.getBroadcast(this, 0,
+                new Intent(DELIVERED), 0));
+        deliveryIntents.add(PendingIntent.getBroadcast(this, 0,
+                new Intent(DELIVERED), 0));
+
+        //---when the SMS has been sent---
+        registerReceiver(new BroadcastReceiver(){
+            @Override
+            public void onReceive(Context arg0, Intent arg1) {
+                switch (getResultCode())
+                {
+                    case Activity.RESULT_OK:
+                        Toast.makeText(getBaseContext(), "SMS sent",
+                                Toast.LENGTH_SHORT).show();
+                        unregisterReceiver(this);
+                        break;
+                    case SmsManager.RESULT_ERROR_GENERIC_FAILURE:
+                        Toast.makeText(getBaseContext(), "Generic failure",
+                                Toast.LENGTH_SHORT).show();
+                        unregisterReceiver(this);
+                        break;
+                    case SmsManager.RESULT_ERROR_NO_SERVICE:
+                        Toast.makeText(getBaseContext(), "No service",
+                                Toast.LENGTH_SHORT).show();
+                        unregisterReceiver(this);
+                        break;
+                    case SmsManager.RESULT_ERROR_NULL_PDU:
+                        Toast.makeText(getBaseContext(), "Null PDU",
+                                Toast.LENGTH_SHORT).show();
+                        unregisterReceiver(this);
+                        break;
+                    case SmsManager.RESULT_ERROR_RADIO_OFF:
+                        Toast.makeText(getBaseContext(), "Radio off",
+                                Toast.LENGTH_SHORT).show();
+                        unregisterReceiver(this);
+                        break;
+                }
+            }
+        }, new IntentFilter(SENT));
+
+        //---when the SMS has been delivered---
+        registerReceiver(new BroadcastReceiver(){
+            @Override
+            public void onReceive(Context arg0, Intent arg1) {
+                switch (getResultCode())
+                {
+                    case Activity.RESULT_OK:
+                        Toast.makeText(getBaseContext(), "SMS delivered",
+                                Toast.LENGTH_SHORT).show();
+                        unregisterReceiver(this);
+                        break;
+                    case Activity.RESULT_CANCELED:
+                        Toast.makeText(getBaseContext(), "SMS not delivered",
+                                Toast.LENGTH_SHORT).show();
+                        unregisterReceiver(this);
+                        break;
+                }
+            }
+        }, new IntentFilter(DELIVERED));
+
+        SmsManager sms = SmsManager.getDefault();
+        sms.sendMultipartTextMessage(phoneNumber, null, message, sentIntents, deliveryIntents);
     }
 
     private class StartEventTask extends AsyncTask<String, Void, Void> {

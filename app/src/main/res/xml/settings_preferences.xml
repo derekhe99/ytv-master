@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width = "match_parent"
+    android:layout_height = "match_parent">
+    <MultiSelectListPreference
+        android:key="select_contact"
+        android:title="Select Emergency Contacts (Max. 3)"
+        android:summary="These people will receive an automatic text with your live stream and location"
+        android:defaultValue="@array/emptyArray" />
+    <CheckBoxPreference
+        android:key="enable_dim"
+        android:title="Enable Screen Dimming"
+        android:summary="Screen will be dimmed when this is checked."/>
+    <EditTextPreference
+        android:key="custom_text"
+        android:title="Custom Message"
+        android:summary='Adds this extra text to default message (max 160 characters)'
+        android:defaultValue="- Sent From the Pulled Over App"/>
+</PreferenceScreen>

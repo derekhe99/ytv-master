@@ -20,7 +20,7 @@
         android:icon="@drawable/ic_mailboxes_accounts"
         android:title="@string/accounts" />
     <item
-        android:id="@+id/emergency_contacts"
+        android:id="@+id/settings"
         android:icon="@drawable/ic_mailboxes_accounts"
         android:title="Settings"/>
 </menu>

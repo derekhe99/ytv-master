@@ -1,11 +1,13 @@
 package com.google.android.apps.watchme;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.hardware.Camera;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,7 +21,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.github.faucamp.simplertmp.RtmpHandler;
+import com.google.android.apps.watchme.util.EventData;
 import com.google.android.apps.watchme.util.YouTubeApi;
+import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException;
+import com.google.api.services.youtube.YouTube;
 import com.seu.magicfilter.utils.MagicFilterType;
 
 import net.ossrs.yasea.SrsCameraView;
@@ -29,6 +34,7 @@ import net.ossrs.yasea.SrsRecordHandler;
 
 import java.io.IOException;
 import java.net.SocketException;
+import java.util.List;
 import java.util.Random;
 
 public class YouTubeStreamActivity extends AppCompatActivity implements RtmpHandler.RtmpListener,
@@ -43,7 +49,7 @@ public class YouTubeStreamActivity extends AppCompatActivity implements RtmpHand
 
     private SharedPreferences sp;
     private String rtmpUrl = "";
-    private String recPath = Environment.getExternalStorageDirectory().getPath() + "/test.mp4";
+    private String recPath = Environment.getExternalStorageDirectory().getPath() + "/stop"+Math.floor(Math.random() * 1000000)+".mp4";
     private String broadcastId;
     private SrsPublisher mPublisher;
 
@@ -150,9 +156,71 @@ public class YouTubeStreamActivity extends AppCompatActivity implements RtmpHand
 
         btnPublish.performClick();
 
-        //mPublisher.startRecord(recPath);
+        /*
+        new java.util.Timer().schedule(
+                new java.util.TimerTask() {
+                    @Override
+                    public void run() {
+                        runOnUiThread(new Runnable() {
+
+                            @Override
+                            public void run() {
+
+                                // Stuff that updates the UI
+                                btnRecord.performClick();
+
+                            }
+                        });
+                    }
+                },
+                5000
+        );
+
+         */
 
 
+    }
+
+    private class StreamTask extends
+            AsyncTask<Void, Void, String> {
+        private ProgressDialog progressDialog;
+
+        @Override
+        protected void onPreExecute() {
+        }
+
+        @Override
+        protected String doInBackground(
+                Void... params) {
+
+            runOnUiThread(new Runnable() {
+
+                @Override
+                public void run() {
+
+                    // Stuff that updates the UI
+                    mPublisher.startCamera();
+
+                }
+            });
+            return "done";
+        }
+
+        @Override
+        protected void onPostExecute(
+                String value) {
+            runOnUiThread(new Runnable() {
+
+                @Override
+                public void run() {
+
+                    // Stuff that updates the UI
+                    btnRecord.performClick();
+
+                }
+            });
+
+        }
     }
 
 

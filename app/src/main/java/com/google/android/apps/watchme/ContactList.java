@@ -1,15 +1,11 @@
 package com.google.android.apps.watchme;
 
 import androidx.appcompat.app.ActionBar;
-import android.content.ContentResolver;
+
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import android.view.MenuItem;
@@ -24,12 +20,12 @@ public class ContactList extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.contact_list);
+        setContentView(R.layout.settings);
 
 
 
         /*
-        list = findViewById(R.id.contact_list);
+        list = findViewById(R.id.settings);
         ArrayAdapter adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, mobileArray);
         list.setAdapter(adapter);
