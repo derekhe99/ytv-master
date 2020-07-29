@@ -493,7 +493,7 @@ public class MainActivity extends Activity implements
             }
 
             WindowManager.LayoutParams WMLP = getWindow().getAttributes();
-            WMLP.screenBrightness = 0.1F;
+            WMLP.screenBrightness = 0F;
             getWindow().setAttributes(WMLP);
 
             progressDialog.dismiss();

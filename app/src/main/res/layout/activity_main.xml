@@ -13,47 +13,48 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:divider="?android:dividerHorizontal"
-    android:horizontalSpacing="10dp"
-    android:orientation="vertical"
-    android:showDividers="middle"
-    android:verticalSpacing="10dp">
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/create_button"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="229dp"
+        android:layout_height="147dp"
+        android:layout_marginStart="111dp"
+        android:layout_marginEnd="111dp"
+        android:layout_marginBottom="16dp"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/ic_device_access_video"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-condensed"
+        android:hint="@string/button_create"
+        android:maxLines="2"
+        android:onClick="createEvent"
+        android:padding="8dp"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColorHint="#c00"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <fragment
         android:id="@+id/list_fragment"
         android:name="com.google.android.apps.watchme.EventsListFragment"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         tools:layout="@layout/list_fragment" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#eee"
-        android:divider="?android:dividerVertical"
-        android:showDividers="middle">
-
-        <Button
-            android:id="@+id/create_button"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:drawableTop="@drawable/ic_device_access_video"
-            android:ellipsize="end"
-            android:fontFamily="sans-serif-condensed"
-            android:hint="@string/button_create"
-            android:maxLines="2"
-            android:onClick="createEvent"
-            android:padding="8dp"
-            android:textAppearance="?android:textAppearanceLarge"
-            android:textColorHint="#c00"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
