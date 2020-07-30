@@ -1,14 +1,20 @@
 package com.google.android.apps.watchme;
 
+import android.Manifest;
 import android.content.ContentResolver;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.preference.CheckBoxPreference;
 import androidx.preference.EditTextPreference;
 import androidx.preference.MultiSelectListPreference;
 import androidx.preference.Preference;
@@ -57,8 +63,13 @@ public class SettingsFragment extends PreferenceFragment {
             @Override
             public boolean onPreferenceChange(Preference preference, Object newValue) {
                 Set<String> selections = ((Set<String>) newValue);
-                if (selections.size() < 4){
+                if (selections.size() < 4 && selections.size() > 0){
+                    SharedPreferences preferences = androidx.preference.PreferenceManager.getDefaultSharedPreferences(getContext());
+                    preferences.edit().putBoolean("contacts", true).apply();
                     return true;
+                } else if (selections.size() < 4){
+                    Toast.makeText(getActivity(), "At least 1 contact needed", Toast.LENGTH_LONG).show();
+                    return false;
                 } else {
                     Toast.makeText(getActivity(), "Maximum 3 Contacts", Toast.LENGTH_LONG).show();
                     return false;
@@ -84,6 +95,17 @@ public class SettingsFragment extends PreferenceFragment {
                 }
             }
         });
+
+        final CheckBoxPreference checkBoxPreference = (CheckBoxPreference) findPreference("enable_dim");
+        boolean permission;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            permission = Settings.System.canWrite(getContext());
+        } else {
+            permission = ContextCompat.checkSelfPermission(getContext(), Manifest.permission.WRITE_SETTINGS) == PackageManager.PERMISSION_GRANTED;
+        }
+        if (!permission){
+            checkBoxPreference.setChecked(false);
+        }
 
     }
 

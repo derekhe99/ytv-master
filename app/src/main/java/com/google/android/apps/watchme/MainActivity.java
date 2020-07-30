@@ -25,6 +25,7 @@ import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
@@ -35,10 +36,13 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.preference.PreferenceManager;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -47,6 +51,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 
+import android.provider.MediaStore;
 import android.provider.Settings;
 import android.telephony.SmsManager;
 import android.util.Log;
@@ -70,6 +75,7 @@ import com.google.android.apps.watchme.util.YouTubeApi;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.button.MaterialButtonToggleGroup;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
 import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException;
@@ -115,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements
             Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.SEND_SMS, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION,
             Manifest.permission.WRITE_SETTINGS, Manifest.permission.SYSTEM_ALERT_WINDOW};
-    int PERMISSION_ALL = 1;
+    private static final int PERMISSION_ALL = 1;
 
     LocationManager locationManager;
     private String longi = "";
@@ -139,8 +145,8 @@ public class MainActivity extends AppCompatActivity implements
     String[] subtitle ={
             "Allow permissions on installation, or go to your Settings app to allow them",
             "Choose your Google Account on installation, or change using the Accounts tab at the top-right",
-            "Enable live streaming in your chosen account from the website or app (there will be a 24 hour delay to confirm)",
-            "Select Two Emergency Contacts to notify when you're stopped",
+            "Enable live streaming in your chosen account from the Youtube website or app (there will be a 24 hour delay to confirm)",
+            "Select Up to Three Emergency Contacts to notify when you're stopped through the Settings tab at the top-right",
             "Press the button to conduct a test run to ensure the whole process works for you and your contacts"
     };
 
@@ -180,6 +186,8 @@ public class MainActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setupSharedPreferences();
+
         if (!hasPermissions(this, PERMISSIONS)) {
             ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
         }
@@ -197,30 +205,97 @@ public class MainActivity extends AppCompatActivity implements
 
         credential.setSelectedAccountName(mChosenAccountName);
 
+
         if (mChosenAccountName == null){
             chooseAccount();
         }
-
-        setupSharedPreferences();
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.newic_launcher);
 
         mTextView = findViewById(R.id.text_view);
 
-        mTextView.setText("Start Guide");
-
         mListView = findViewById(R.id.list_view);
+        mToggleGroup = findViewById(R.id.toggleGroup);
 
-        MyListAdapter adapter = new MyListAdapter(this, maintitle, subtitle);
-        mListView.setAdapter(adapter);
+        setUp();
 
         button1 = findViewById(R.id.button1);
         button2 = findViewById(R.id.button2);
         button3 = findViewById(R.id.button3);
 
+        loadData();
+
         addNotification();
     }
+
+    public void setUp(){
+        SharedPreferences preferences = androidx.preference.PreferenceManager.getDefaultSharedPreferences(this);
+        boolean[] checks = {
+                preferences.getBoolean("permissions", false),
+                preferences.getBoolean("signin", false),
+                preferences.getBoolean("enable", false),
+                preferences.getBoolean("contacts", false),
+                preferences.getBoolean("test", false)
+        };
+        boolean done = true;
+        for (int i = 0; i < checks.length; i++){
+            if (checks[i] == false){
+                done = false;
+            }
+        }
+        if (done){
+            mToggleGroup.check(R.id.button2);
+            mTextView.setText("Know Your Rights");
+            mTextView.setTextSize(40);
+            MyListAdapter adapter = new MyListAdapter(this, maintitle2, subtitle2);
+            mListView.setAdapter(adapter);
+        } else {
+            mTextView.setText("Set-Up");
+
+            SetupAdapter adapter = new SetupAdapter(this, maintitle, subtitle, checks);
+            mListView.setAdapter(adapter);
+        }
+
+    }
+
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case PERMISSION_ALL: {
+                boolean granted = true;
+                for (int i = 0; i < (grantResults.length - 2); i++){
+                    if (grantResults[i] == PackageManager.PERMISSION_DENIED){
+                        granted = false;
+                    }
+                }
+
+                if (!granted){
+                    new MaterialAlertDialogBuilder(MainActivity.this)
+                            .setTitle("Missing Required Permissions")
+                            .setMessage("Permissions are required to use the app")
+                            .setPositiveButton("Ok", /* listener = */ new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    ActivityCompat.requestPermissions(MainActivity.this, PERMISSIONS, PERMISSION_ALL);
+                                }
+                            })
+                            .setCancelable(false)
+                            .show();
+                } else {
+                    SharedPreferences preferences = androidx.preference.PreferenceManager.getDefaultSharedPreferences(this);
+                    preferences.edit().putBoolean("permissions", true).apply();
+                }
+            }
+
+            // other 'case' lines to check for other
+            // permissions this app might request
+        }
+    }
+
+
 
     private void addNotification() {
 
@@ -262,8 +337,18 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     public void button1(View view){
-        mTextView.setText("Start Guide");
-        MyListAdapter adapter = new MyListAdapter(this, maintitle, subtitle);
+        mTextView.setText("Set-Up");
+        SharedPreferences preferences = androidx.preference.PreferenceManager.getDefaultSharedPreferences(this);
+
+        boolean[] checks = {
+                preferences.getBoolean("permissions", false),
+                preferences.getBoolean("signin", false),
+                preferences.getBoolean("enable", false),
+                preferences.getBoolean("contacts", false),
+                preferences.getBoolean("test", false)
+        };
+
+        SetupAdapter adapter = new SetupAdapter(this, maintitle, subtitle, checks);
         mListView.setAdapter(adapter);
     }
 
@@ -283,6 +368,21 @@ public class MainActivity extends AppCompatActivity implements
     private void setupSharedPreferences() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+
+        boolean shouldInsertData = sharedPreferences.getBoolean("shouldInsertData", true);
+
+        if(shouldInsertData){
+
+            //insert your data into the preferences
+            sharedPreferences.edit().putBoolean("permissions", false).apply();
+            sharedPreferences.edit().putBoolean("signin", false).apply();
+            sharedPreferences.edit().putBoolean("enable", false).apply();
+            sharedPreferences.edit().putBoolean("contacts", false).apply();
+            sharedPreferences.edit().putBoolean("test", false).apply();
+
+            sharedPreferences.edit().putBoolean("shouldInsertData", false).apply();
+
+        }
     }
 
     @Override
@@ -297,6 +397,21 @@ public class MainActivity extends AppCompatActivity implements
         if (key.equals("enable_dim")){
             if (sharedPreferences.getBoolean("enable_dim", false)){
                 youDesirePermissionCode(this);
+            }
+        }
+        if (key.equals("permissions")){
+            if (sharedPreferences.getBoolean("permissions", false)){
+                setUp();
+            }
+        }
+        if (key.equals("signin")){
+            if (sharedPreferences.getBoolean("permissions", false)){
+                setUp();
+            }
+        }
+        if (key.equals("enable")){
+            if (sharedPreferences.getBoolean("enable", false)){
+                setUp();
             }
         }
 
@@ -322,18 +437,24 @@ public class MainActivity extends AppCompatActivity implements
 
     public void startStreaming(EventData event) {
 
+        if (event != null){
+            SharedPreferences preferences = androidx.preference.PreferenceManager.getDefaultSharedPreferences(this);
+            boolean test = preferences.getBoolean("test", false);
+            if (!test){
+                preferences.edit().putBoolean("test", true).apply();
+            }
+            String broadcastId = event.getId();
+            Log.e("Mainactivity", broadcastId);
+            new StartEventTask().execute(broadcastId);
 
-        String broadcastId = event.getId();
-        Log.e("MAinactivity", broadcastId);
-        new StartEventTask().execute(broadcastId);
+            Intent intent = new Intent(getApplicationContext(),
+                    YouTubeStreamActivity.class);
+            intent.putExtra(YouTubeApi.RTMP_URL_KEY, event.getIngestionAddress());
+            intent.putExtra(YouTubeApi.BROADCAST_ID_KEY, broadcastId);
+            Log.e("Stream---", broadcastId  +"  "+event.getIngestionAddress());
 
-        Intent intent = new Intent(getApplicationContext(),
-                YouTubeStreamActivity.class);
-        intent.putExtra(YouTubeApi.RTMP_URL_KEY, event.getIngestionAddress());
-        intent.putExtra(YouTubeApi.BROADCAST_ID_KEY, broadcastId);
-        Log.e("Stream---", broadcastId  +"  "+event.getIngestionAddress());
-
-        startActivityForResult(intent, REQUEST_STREAMER);
+            startActivityForResult(intent, REQUEST_STREAMER);
+        }
 
     }
 
@@ -345,7 +466,41 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     public void createEvent(View view) {
-        new CreateLiveEventTask(this).execute();
+        SharedPreferences preferences = androidx.preference.PreferenceManager.getDefaultSharedPreferences(this);
+        boolean[] checks = {
+                preferences.getBoolean("permissions", false),
+                preferences.getBoolean("signin", false),
+                preferences.getBoolean("enable", false),
+                preferences.getBoolean("contacts", false)
+        };
+
+        for (int i = 0; i < checks.length; i++){
+            if (checks[i] == false){
+                new MaterialAlertDialogBuilder(MainActivity.this)
+                        .setTitle("Missing Set-up")
+                        .setMessage("Do the first 4 set-up tasks before streaming")
+                        .setPositiveButton("Ok", /* listener = */ new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+
+                            }
+                        })
+                        .show();
+                return;
+            }
+        }
+
+        ConnectivityManager cm =
+                (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null &&
+                activeNetwork.isConnectedOrConnecting();
+
+        if (isConnected != true){
+            Toast.makeText(getBaseContext(), "No Internet Connection",
+                    Toast.LENGTH_LONG).show();
+        }
+        new CreateLiveEventTask(this).execute(isConnected);
     }
 
 
@@ -364,6 +519,26 @@ public class MainActivity extends AppCompatActivity implements
 
     private void loadData() {
         if (mChosenAccountName == null) {
+            return;
+        }
+        Log.e("Loading---", "OnCreateView");
+        ConnectivityManager cm =
+                (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null &&
+                activeNetwork.isConnectedOrConnecting();
+
+        if (isConnected != true){
+            new MaterialAlertDialogBuilder(MainActivity.this)
+                    .setTitle("No Internet Connection")
+                    .setMessage("Functions will be limited")
+                    .setPositiveButton("Ok", /* listener = */ new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+
+                        }
+                    })
+                    .show();
             return;
         }
         getLiveEvents();
@@ -455,7 +630,14 @@ public class MainActivity extends AppCompatActivity implements
                         mChosenAccountName = accountName;
                         credential.setSelectedAccountName(accountName);
                         saveAccount();
+                        loadData();
                     }
+                }
+                if (mChosenAccountName == null){
+                    chooseAccount();
+                } else {
+                    SharedPreferences preferences = androidx.preference.PreferenceManager.getDefaultSharedPreferences(this);
+                    preferences.edit().putBoolean("signin", true).apply();
                 }
                 break;
             case REQUEST_STREAMER:
@@ -470,7 +652,7 @@ public class MainActivity extends AppCompatActivity implements
             case CODE_WRITE_SETTINGS_PERMISSION:
                 if(Settings.System.canWrite(this))
                 {
-                Log.d("TAG", "MainActivity.CODE_WRITE_SETTINGS_PERMISSION success");
+                Log.e("TAG", "MainActivity.CODE_WRITE_SETTINGS_PERMISSION success");
                 //do your code
                 }
                 break;
@@ -575,7 +757,10 @@ public class MainActivity extends AppCompatActivity implements
                     credential).setApplicationName(APP_NAME)
                     .build();
             try {
-                return YouTubeApi.getLiveEvents(youtube);
+                List<EventData> events = YouTubeApi.getLiveEvents(youtube);
+                SharedPreferences preferences = androidx.preference.PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                preferences.edit().putBoolean("enable", true).apply();
+                return events;
             } catch (UserRecoverableAuthIOException e) {
                 startActivityForResult(e.getIntent(), REQUEST_AUTHORIZATION);
             } catch (IOException e) {
@@ -598,7 +783,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private class CreateLiveEventTask extends
-            AsyncTask<Void, Void, List<EventData>> {
+            AsyncTask<Boolean, Void, List<EventData>> {
         private ProgressDialog progressDialog;
 
         private WeakReference<Context> contextRef;
@@ -611,41 +796,70 @@ public class MainActivity extends AppCompatActivity implements
         protected void onPreExecute() {
             progressDialog = ProgressDialog.show(MainActivity.this, null,
                     getResources().getText(R.string.creatingEvent), true);
+
         }
 
         @Override
         protected List<EventData> doInBackground(
-                Void... params) {
+                Boolean... params) {
             YouTube youtube = new YouTube.Builder(transport, jsonFactory,
                     credential).setApplicationName(APP_NAME)
                     .build();
-            try {
-                String date = new Date().toString();
-                YouTubeApi.createLiveEvent(youtube, "Event - " + date,
-                        "A live streaming event - " + date);
-                return YouTubeApi.getLiveEvents(youtube);
+            if (params[0] == true){
+                try {
+                    String date = new Date().toString();
+                    YouTubeApi.createLiveEvent(youtube, "Event - " + date,
+                            "A live streaming event - " + date);
+                    return YouTubeApi.getLiveEvents(youtube);
 
-            } catch (UserRecoverableAuthIOException e) {
-                startActivityForResult(e.getIntent(), REQUEST_AUTHORIZATION);
-            } catch (IOException e) {
-                Log.e(MainActivity.APP_NAME, "", e);
+                } catch (UserRecoverableAuthIOException e) {
+                    startActivityForResult(e.getIntent(), REQUEST_AUTHORIZATION);
+                } catch (IOException e) {
+                    Log.e(MainActivity.APP_NAME, "", e);
+                }
             }
-
             return null;
         }
 
         @Override
         protected void onPostExecute(
                 List<EventData> fetchedEvents) {
+            boolean internet = false;
+            String watchUrl = null;
+            if (fetchedEvents != null){
+                internet = true;
+            }
 
             Button buttonCreateEvent = (Button) findViewById(R.id.create_button);
             buttonCreateEvent.setEnabled(true);
 
-            Log.e(MainActivity.APP_NAME, fetchedEvents.get(fetchedEvents.size()-1).getIngestionAddress());
-            Log.e(MainActivity.APP_NAME, fetchedEvents.get(fetchedEvents.size()-1).getWatchUri());
+            if (internet == true && fetchedEvents != null && fetchedEvents.get(fetchedEvents.size()-1).getIngestionAddress() != null){
+                Log.e(MainActivity.APP_NAME, fetchedEvents.get(fetchedEvents.size()-1).getIngestionAddress());
+                Log.e(MainActivity.APP_NAME, fetchedEvents.get(fetchedEvents.size()-1).getWatchUri());
 
-            String watchUrl = fetchedEvents.get(fetchedEvents.size()-1).getWatchUri();
-            startStreaming(fetchedEvents.get(fetchedEvents.size()-1));
+                watchUrl = fetchedEvents.get(fetchedEvents.size()-1).getWatchUri();
+                startStreaming(fetchedEvents.get(fetchedEvents.size()-1));
+            } else {
+                new MaterialAlertDialogBuilder(MainActivity.this)
+                        .setTitle("No Internet Connection")
+                        .setMessage("Sending SMS messages now. Open Camera to record.")
+                        .setPositiveButton("Open Camera", /* listener = */ new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                String recPath = Environment.getExternalStorageDirectory().getPath() + "/stop"+Math.floor(Math.random() * 10000000)+".mp4";
+                                Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+                                intent.putExtra(MediaStore.EXTRA_OUTPUT, recPath);
+                                startActivity(intent);
+                            }
+                        })
+                        .setNegativeButton("Cancel", /* listener = */ new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+
+                                dialog.cancel();
+                            }
+                        })
+                        .show();
+            }
+
 
             Context context = contextRef.get();
 
@@ -660,35 +874,49 @@ public class MainActivity extends AppCompatActivity implements
                         Settings.System.SCREEN_BRIGHTNESS, 0);
             }
 
-            Location place = getLocation();
-            double latitude = place.getLatitude();
-            double longitude = place.getLongitude();
+            Location place = null;
+            double latitude = Double.NaN;
+            double longitude = Double.NaN;
 
-            Geocoder geocoder;
-            List<Address> addresses;
-            geocoder = new Geocoder(context, Locale.getDefault());
-            String strAdd = null;
-
-            try {
-                addresses = geocoder.getFromLocation(latitude, longitude, 1);
-
-                if (addresses != null) {
-                    Address returnedAddress = addresses.get(0);
-                    StringBuilder strReturnedAddress = new StringBuilder("");
-
-                    strReturnedAddress.append(addresses.get(0).getAddressLine(0));
-
-                    strAdd = strReturnedAddress.toString();
-                    Log.e("Address---", strReturnedAddress.toString());
-                } else {
-                    Log.e("Address---", "No Address returned!");
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-                Log.e("Address--", "Can't get Address!");
+            if (internet == true){
+                place = getLocation();
+                latitude = place.getLatitude();
+                longitude = place.getLongitude();
             }
 
-            Log.e("SENDING", "Sending Message RIGHT NOW from " + String.valueOf(latitude) + " " + String.valueOf(longitude));
+            Geocoder geocoder = null;
+            List<Address> addresses;
+            if (internet == true){
+                geocoder = new Geocoder(context, Locale.getDefault());
+            }
+
+            String strAdd = null;
+
+            if (internet == true){
+                try {
+                    addresses = geocoder.getFromLocation(latitude, longitude, 1);
+
+                    if (addresses != null) {
+                        Address returnedAddress = addresses.get(0);
+                        StringBuilder strReturnedAddress = new StringBuilder("");
+
+                        strReturnedAddress.append(addresses.get(0).getAddressLine(0));
+
+                        strAdd = strReturnedAddress.toString();
+                        Log.e("Address---", strReturnedAddress.toString());
+                    } else {
+                        Log.e("Address---", "No Address returned!");
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Log.e("Address--", "Can't get Address!");
+                }
+            }
+
+            if (latitude != Double.NaN){
+                Log.e("SENDING", "Sending Message RIGHT NOW from " + latitude + " " + longitude);
+            }
+
 
             if (strAdd != null){
                 Log.e("SENDING", "Sending Message RIGHT NOW from " + strAdd);
@@ -699,7 +927,7 @@ public class MainActivity extends AppCompatActivity implements
 
             String custom = preferences.getString("custom_text", "DEFAULT");
 
-            if (selected != null && strAdd != null){
+            if (selected != null && strAdd != null && watchUrl != null){
                 String message = "I have been pulled over at " + strAdd + ". \nWatch live at " + watchUrl + "\n";
                 ArrayList<String> parts = new ArrayList<>();
                 parts.add(message);
@@ -709,8 +937,18 @@ public class MainActivity extends AppCompatActivity implements
                     Log.e("CUSTOM", custom);
                     sendSMS(selected[i], parts);
                 }
-            } else if (selected != null){
+            } else if (selected != null && watchUrl != null){
                 String message = "I have been pulled over. \nWatch live at " + watchUrl + "\n";
+                ArrayList<String> parts = new ArrayList<>();
+                parts.add(message);
+                parts.add(custom);
+                for (int i = 0; i < selected.length; i++){
+                    Log.e("SENDING", "Sending Message RIGHT NOW to " + selected[i]);
+                    Log.e("CUSTOM", custom);
+                    sendSMS(selected[i], parts);
+                }
+            } else if (selected != null) {
+                String message = "I have been pulled over.";
                 ArrayList<String> parts = new ArrayList<>();
                 parts.add(message);
                 parts.add(custom);

@@ -1,7 +1,9 @@
 package com.google.android.apps.watchme;
 
+import android.accounts.AccountManager;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
@@ -11,6 +13,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.provider.MediaStore;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,11 +23,13 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.github.faucamp.simplertmp.RtmpHandler;
 import com.google.android.apps.watchme.util.EventData;
 import com.google.android.apps.watchme.util.YouTubeApi;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException;
 import com.google.api.services.youtube.YouTube;
 import com.seu.magicfilter.utils.MagicFilterType;
@@ -43,15 +50,19 @@ public class YouTubeStreamActivity extends AppCompatActivity implements RtmpHand
     private static final String TAG = "Yasea";
 
     Button btnPublish = null;
-    Button btnSwitchCamera = null;
+    ImageButton btnSwitchCamera = null;
     Button btnRecord = null;
     Button btnSwitchEncoder = null;
 
+    boolean ended = false;
+
     private SharedPreferences sp;
     private String rtmpUrl = "";
-    private String recPath = Environment.getExternalStorageDirectory().getPath() + "/stop"+Math.floor(Math.random() * 1000000)+".mp4";
+    private String recPath = Environment.getExternalStorageDirectory().getPath() + "/stop"+Math.floor(Math.random() * 10000000)+".mp4";
     private String broadcastId;
     private SrsPublisher mPublisher;
+
+    private static final int LEAVE_SCREEN= 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,19 +70,24 @@ public class YouTubeStreamActivity extends AppCompatActivity implements RtmpHand
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_you_tube_stream);
+
         broadcastId = getIntent().getStringExtra(YouTubeApi.BROADCAST_ID_KEY);
-        Log.v(MainActivity.APP_NAME, broadcastId);
+        if (broadcastId != null){
+            Log.v(MainActivity.APP_NAME, broadcastId);
+        }
 
         rtmpUrl = getIntent().getStringExtra(YouTubeApi.RTMP_URL_KEY);
 
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
+        this.getSupportActionBar().hide();
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
 
         // restore data.
         sp = getSharedPreferences("Yasea", MODE_PRIVATE);
         //rtmpUrl = sp.getString("rtmpUrl", rtmpUrl);
 
         btnPublish = (Button) findViewById(R.id.publish);
-        btnSwitchCamera = (Button) findViewById(R.id.swCam);
+        btnSwitchCamera = (ImageButton) findViewById(R.id.swCam);
         btnRecord = (Button) findViewById(R.id.record);
         btnSwitchEncoder = (Button) findViewById(R.id.swEnc);
 
@@ -101,7 +117,10 @@ public class YouTubeStreamActivity extends AppCompatActivity implements RtmpHand
                     }
                     btnPublish.setText("stop");
                     btnSwitchEncoder.setEnabled(false);
+                    btnSwitchEncoder.setVisibility(View.GONE);
+                    btnRecord.setVisibility(View.GONE);
                 } else if (btnPublish.getText().toString().contentEquals("stop")) {
+                    ended = true;
                     mPublisher.stopPublish();
                     mPublisher.stopRecord();
                     btnPublish.setText("publish");
@@ -154,9 +173,9 @@ public class YouTubeStreamActivity extends AppCompatActivity implements RtmpHand
             }
         });
 
+
         btnPublish.performClick();
 
-        /*
         new java.util.Timer().schedule(
                 new java.util.TimerTask() {
                     @Override
@@ -167,6 +186,7 @@ public class YouTubeStreamActivity extends AppCompatActivity implements RtmpHand
                             public void run() {
 
                                 // Stuff that updates the UI
+                                Log.e("Record---", "Button clicked");
                                 btnRecord.performClick();
 
                             }
@@ -176,53 +196,10 @@ public class YouTubeStreamActivity extends AppCompatActivity implements RtmpHand
                 5000
         );
 
-         */
+
 
 
     }
-
-    private class StreamTask extends
-            AsyncTask<Void, Void, String> {
-        private ProgressDialog progressDialog;
-
-        @Override
-        protected void onPreExecute() {
-        }
-
-        @Override
-        protected String doInBackground(
-                Void... params) {
-
-            runOnUiThread(new Runnable() {
-
-                @Override
-                public void run() {
-
-                    // Stuff that updates the UI
-                    mPublisher.startCamera();
-
-                }
-            });
-            return "done";
-        }
-
-        @Override
-        protected void onPostExecute(
-                String value) {
-            runOnUiThread(new Runnable() {
-
-                @Override
-                public void run() {
-
-                    // Stuff that updates the UI
-                    btnRecord.performClick();
-
-                }
-            });
-
-        }
-    }
-
 
     /*
     @Override
@@ -348,27 +325,6 @@ public class YouTubeStreamActivity extends AppCompatActivity implements RtmpHand
         }
     }
 
-    private static String getRandomAlphaString(int length) {
-        String base = "abcdefghijklmnopqrstuvwxyz";
-        Random random = new Random();
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < length; i++) {
-            int number = random.nextInt(base.length());
-            sb.append(base.charAt(number));
-        }
-        return sb.toString();
-    }
-
-    private static String getRandomAlphaDigitString(int length) {
-        String base = "abcdefghijklmnopqrstuvwxyz0123456789";
-        Random random = new Random();
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < length; i++) {
-            int number = random.nextInt(base.length());
-            sb.append(base.charAt(number));
-        }
-        return sb.toString();
-    }
 
     private void handleException(Exception e) {
         try {
@@ -410,7 +366,38 @@ public class YouTubeStreamActivity extends AppCompatActivity implements RtmpHand
 
     @Override
     public void onRtmpDisconnected() {
+        if (ended){
+            return;
+        }
         Toast.makeText(getApplicationContext(), "Disconnected", Toast.LENGTH_SHORT).show();
+        new MaterialAlertDialogBuilder(YouTubeStreamActivity.this)
+                .setTitle("No Internet Connection")
+                .setMessage("Open Camera to record.")
+                .setPositiveButton("Open Camera", /* listener = */ new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        String recPath = Environment.getExternalStorageDirectory().getPath() + "/stop"+Math.floor(Math.random() * 10000000)+".mp4";
+                        Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+                        intent.putExtra(MediaStore.EXTRA_OUTPUT, recPath);
+                        startActivityForResult(intent, LEAVE_SCREEN);
+                    }
+                })
+                .setNegativeButton("Cancel", /* listener = */ new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        finish();
+                        dialog.cancel();
+                    }
+                })
+                .setCancelable(false)
+                .show();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case LEAVE_SCREEN:
+                finish();
+        }
     }
 
     @Override

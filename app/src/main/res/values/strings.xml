@@ -15,7 +15,7 @@
 -->
 
 <resources>
-    <string name="app_name">Pulled Over</string>
+    <string name="app_name">Cop Cam</string>
     <string name="button_create">START LIVESTREAM</string>
     <string name="connection_to_google_play_failed">Connection to Play Services failed.</string>
     <string name="not_signed_in">Not signed in</string>

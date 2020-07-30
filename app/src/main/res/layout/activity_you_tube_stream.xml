@@ -25,13 +25,13 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="switch"
         android:id="@+id/swCam"
         android:layout_alignBottom="@+id/publish"
-        android:layout_toRightOf="@+id/publish" />
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_switch_cam"/>
 
     <Button
         android:layout_width="wrap_content"
