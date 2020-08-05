@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#6200EE</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey">#979399</color>
+    <color name="oldcolorAccent">#03DAC5</color>
+
+    <!--DARK MODE COLORS-->
+
+    <color name="colorPrimaryNight">#16202c</color>
+    <color name="colorPrimaryDarkNight">#141d26</color>
+    <color name="colorAccentNight">#ffffff</color>
+
+    <color name="primaryTextColor">#212121</color>
+    <color name="primaryTitleColorNight">#FFFFFF</color>
+
+</resources>
